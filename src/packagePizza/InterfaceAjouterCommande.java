@@ -267,13 +267,13 @@ public class InterfaceAjouterCommande {
 			String sqlPizza = "select * from pizza where nomPizza = '"+nomPizza + "'";
 			Statement statement = connection.createStatement();
 			
-			ResultSet resultClient = statement.executeQuery(sqlPizza);
+			ResultSet resultPizza = statement.executeQuery(sqlPizza);
 			
-			if(resultClient.next()) {
+			if(resultPizza.next()) {
 	
-				String idPizza = resultClient.getString("idPizza");
-				String taillePizza = resultClient.getString("taillePizza");
-				String prixPizza = resultClient.getString("prixPizza");
+				String idPizza = resultPizza.getString("idPizza");
+				String taillePizza = resultPizza.getString("taillePizza");
+				String prixPizza = resultPizza.getString("prixPizza");
 				
 				textIdPizza.setText(idPizza);
 				textTaillePizza.setText(taillePizza);
