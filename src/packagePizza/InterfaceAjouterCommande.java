@@ -5,7 +5,7 @@ import java.sql.*;
 import javax.swing.JFrame;
 import javax.swing.JTextPane;
 
-import com.mysql.cj.xdevapi.Result;
+
 
 import javax.swing.JList;
 import javax.swing.JComboBox;

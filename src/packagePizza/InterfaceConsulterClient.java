@@ -24,7 +24,7 @@ public class InterfaceConsulterClient {
 	public JFrame frame;
 	private JTextField textNomClient;
 	private JTextField textPrenomClient;
-	private JTextField textTelClient;
+	private JTextField textIdClient;
 	
 	// Ajouté pour la connexion
 	private static Connection connection = null;
@@ -67,44 +67,44 @@ public class InterfaceConsulterClient {
 
 		
 		
-		final JComboBox comboBoxIdClient = new JComboBox();
-		comboBoxIdClient.setBounds(131, 38, 180, 21);
-		frame.getContentPane().add(comboBoxIdClient);
+		final JComboBox comboBoxTelClient = new JComboBox();
+		comboBoxTelClient.setBounds(131, 38, 180, 21);
+		frame.getContentPane().add(comboBoxTelClient);
 		
 		textNomClient = new JTextField();
-		textNomClient.setBounds(131, 98, 180, 19);
+		textNomClient.setBounds(131, 155, 180, 19);
 		frame.getContentPane().add(textNomClient);
 		textNomClient.setColumns(10);
 		
 		JLabel lblNom = new JLabel("Nom");
 		lblNom.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblNom.setBounds(131, 82, 46, 13);
+		lblNom.setBounds(133, 132, 46, 13);
 		frame.getContentPane().add(lblNom);
 		
 		textPrenomClient = new JTextField();
 		textPrenomClient.setColumns(10);
-		textPrenomClient.setBounds(131, 143, 180, 19);
+		textPrenomClient.setBounds(131, 207, 180, 19);
 		frame.getContentPane().add(textPrenomClient);
 		
 		JLabel lblPrenom = new JLabel("Prenom");
 		lblPrenom.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblPrenom.setBounds(131, 127, 77, 13);
+		lblPrenom.setBounds(131, 184, 77, 13);
 		frame.getContentPane().add(lblPrenom);
 		
-		textTelClient = new JTextField();
-		textTelClient.setColumns(10);
-		textTelClient.setBounds(131, 188, 180, 19);
-		frame.getContentPane().add(textTelClient);
+		textIdClient = new JTextField();
+		textIdClient.setColumns(10);
+		textIdClient.setBounds(131, 103, 180, 19);
+		frame.getContentPane().add(textIdClient);
 		
-		JLabel lblTel = new JLabel("T\u00E9l\u00E9phone");
-		lblTel.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblTel.setBounds(131, 172, 77, 13);
-		frame.getContentPane().add(lblTel);
+		JLabel lblId = new JLabel("Identifiant");
+		lblId.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		lblId.setBounds(131, 80, 77, 13);
+		frame.getContentPane().add(lblId);
 		
-		JLabel lblIdClient = new JLabel("Identifiant");
-		lblIdClient.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblIdClient.setBounds(172, 15, 102, 13);
-		frame.getContentPane().add(lblIdClient);
+		JLabel lblTelClient = new JLabel("T\u00E9l\u00E9phone");
+		lblTelClient.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		lblTelClient.setBounds(172, 15, 102, 13);
+		frame.getContentPane().add(lblTelClient);
 		
 		/* Variable de debug pour vérifier si la connexion a bien été établi */
 		boolean coReussi = false;
@@ -133,7 +133,7 @@ public class InterfaceConsulterClient {
 		
 		
 		while(result.next()) {
-			comboBoxIdClient.addItem(result.getString(1));
+			comboBoxTelClient.addItem(result.getString(4));
 		}
 		
 		
@@ -160,7 +160,7 @@ public class InterfaceConsulterClient {
 		btnAfficher.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					selectClient(comboBoxIdClient.getSelectedItem().toString());
+					selectClient(comboBoxTelClient.getSelectedItem().toString());
 					
 				} catch (Exception z) {
 					throw new RuntimeException("Erreur detecte");
@@ -174,9 +174,9 @@ public class InterfaceConsulterClient {
 		btnAfficher.setBounds(172, 236, 102, 33);
 		frame.getContentPane().add(btnAfficher);
 	}
-	public void selectClient(String idClient) throws SQLException{
+	public void selectClient(String telClient) throws SQLException{
 		
-		String sql = "select * from client where idClient ="+idClient;
+		String sql = "select * from client where telClient ="+ "'" + telClient + "'";
 		Statement statement = connection.createStatement();
 		
 		ResultSet result = statement.executeQuery(sql);
@@ -187,11 +187,11 @@ public class InterfaceConsulterClient {
 			
 			String nomClient = result.getString("nomClient");
 			String prenomClient = result.getString("prenomClient");
-			String telClient = result.getString("telClient");
+			String idClient = result.getString("idClient");
 			
 			textNomClient.setText(nomClient);
 			textPrenomClient.setText(prenomClient);
-			textTelClient.setText(telClient);
+			textIdClient.setText(idClient);
 			
 			// Debug
 			
