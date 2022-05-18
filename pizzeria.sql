@@ -30,7 +30,7 @@ CREATE TABLE Adresse(
 CREATE TABLE Ingredient(
    idIngredient INT AUTO_INCREMENT,
    nomIngredient VARCHAR(50),
-   quantiteIngrediant DECIMAL(15,2),
+   quantiteIngredient DECIMAL(15,2),
    PRIMARY KEY(idIngredient)
 );
 
@@ -80,7 +80,7 @@ CREATE TABLE Comporter(
    FOREIGN KEY(idPizza) REFERENCES Pizza(idPizza)
 );
 
-CREATE TABLE Posséder(
+CREATE TABLE Posseder(
    idPizza INT,
    idIngredient INT,
    PRIMARY KEY(idPizza, idIngredient),

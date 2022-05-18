@@ -41,7 +41,7 @@ public class InterfaceGestionnaire {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 300);
+		frame.setBounds(100, 100, 458, 335);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -65,7 +65,7 @@ public class InterfaceGestionnaire {
 			}
 			
 		});
-		btnAddClient.setBounds(138, 40, 139, 44);
+		btnAddClient.setBounds(130, 40, 157, 44);
 		frame.getContentPane().add(btnAddClient);
 		
 		btnAddCommande = new JButton("Ajouter des commandes");
@@ -76,7 +76,7 @@ public class InterfaceGestionnaire {
 				
 			}
 		});
-		btnAddCommande.setBounds(130, 206, 157, 44);
+		btnAddCommande.setBounds(130, 150, 157, 44);
 		frame.getContentPane().add(btnAddCommande);
 		
 		JButton btnAddPizza = new JButton("Ajouter des Pizzas");
@@ -86,7 +86,15 @@ public class InterfaceGestionnaire {
 				interfaceAjouterPizza.frame.setVisible(true);
 			}
 		});
-		btnAddPizza.setBounds(138, 95, 139, 44);
+		btnAddPizza.setBounds(130, 95, 157, 44);
 		frame.getContentPane().add(btnAddPizza);
+		
+		JButton btnModifIngredient = new JButton("Gestion des ingredients");
+		btnModifIngredient.setBounds(287, 253, 145, 32);
+		frame.getContentPane().add(btnModifIngredient);
+		
+		JButton btnAddIngredient = new JButton("Ajouter des ingr\u00E9dients");
+		btnAddIngredient.setBounds(130, 205, 157, 44);
+		frame.getContentPane().add(btnAddIngredient);
 	}
 }
