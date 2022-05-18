@@ -19,6 +19,8 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 
 public class InterfaceAjoutClient {
@@ -92,6 +94,16 @@ public class InterfaceAjoutClient {
 		frame.getContentPane().add(lblTelephone);
 		
 		textTelephone = new JTextField();
+		textTelephone.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char c=e.getKeyChar();
+				if (Character.isLetter(c)&&!e.isAltDown()) {
+					e.consume();
+					System.out.print("Le caractère n'est pas un chiffre\n");
+				}
+			}
+		});
 		textTelephone.setColumns(10);
 		textTelephone.setBounds(160, 187, 138, 19);
 		frame.getContentPane().add(textTelephone);

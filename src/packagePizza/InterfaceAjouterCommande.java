@@ -159,8 +159,8 @@ public class InterfaceAjouterCommande {
 		JButton btnNewButton = new JButton("Retour");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				InterfaceGestionnaire interfaceGestionnaire = new InterfaceGestionnaire();
-				interfaceGestionnaire.frame.setVisible(true);
+				//InterfaceGestionnaire interfaceGestionnaire = new InterfaceGestionnaire();
+				//interfaceGestionnaire.frame.setVisible(true);
 				frame.dispose();
 			}
 		});

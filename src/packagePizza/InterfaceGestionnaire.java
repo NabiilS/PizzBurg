@@ -94,6 +94,12 @@ public class InterfaceGestionnaire {
 		frame.getContentPane().add(btnModifIngredient);
 		
 		JButton btnAddIngredient = new JButton("Ajouter des ingr\u00E9dients");
+		btnAddIngredient.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InterfaceAjouterIngredient interfaceAjouterIngredient = new InterfaceAjouterIngredient();
+				interfaceAjouterIngredient.frame.setVisible(true);
+			}
+		});
 		btnAddIngredient.setBounds(130, 205, 157, 44);
 		frame.getContentPane().add(btnAddIngredient);
 	}

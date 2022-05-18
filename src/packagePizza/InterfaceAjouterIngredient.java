@@ -98,9 +98,7 @@ public class InterfaceAjouterIngredient {
 					e.consume();
 					System.out.print("Le caractère n'est pas un chiffre\n");
 				}
-			}
-			
-			 
+			} 
 		});
 		textQuantiteIngredient.setColumns(10);
 		textQuantiteIngredient.setBounds(160, 125, 138, 19);
@@ -116,17 +114,12 @@ public class InterfaceAjouterIngredient {
 		String password = "";
 		
 		connection = DriverManager.getConnection(dbURL, dbUsername, password);
-		coReussi = true;
-		
-		
-		
+		coReussi = true;		
 		}
 		catch (Exception e) {
-			throw new RuntimeException("Erreur detecte");
-		
+			throw new RuntimeException("Erreur detecte");	
 			
-		}
-		
+		}		
 		JButton btnAjouter = new JButton("Ajouter");
 		btnAjouter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -160,9 +153,8 @@ public class InterfaceAjouterIngredient {
 		JButton btnAnnuler = new JButton("Annuler");
 		btnAnnuler.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				InterfaceGestionnaire fenetreGestionnaire = new InterfaceGestionnaire();
-				fenetreGestionnaire.frame.setVisible(true);
-				
+				// InterfaceGestionnaire fenetreGestionnaire = new InterfaceGestionnaire();
+				//fenetreGestionnaire.frame.setVisible(true);
 				frame.dispose();
 			}
 		});
@@ -184,9 +176,9 @@ public class InterfaceAjouterIngredient {
 		JButton btnConsulterPizza = new JButton("Consulter");
 		btnConsulterPizza.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				InterfaceConsulterPizza consulterPizza = new InterfaceConsulterPizza();
-				consulterPizza.frame.setVisible(true);
-				frame.dispose();
+				InterfaceConsulterIngredient consulterIngredient = new InterfaceConsulterIngredient();
+				consulterIngredient.frame.setVisible(true);
+				//frame.dispose();
 			}
 		});
 		btnConsulterPizza.setFont(new Font("Tahoma", Font.PLAIN, 21));

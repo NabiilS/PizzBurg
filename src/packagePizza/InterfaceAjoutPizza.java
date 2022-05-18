@@ -157,8 +157,8 @@ public class InterfaceAjoutPizza {
 		JButton btnAnnuler = new JButton("Annuler");
 		btnAnnuler.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				InterfaceGestionnaire fenetreGestionnaire = new InterfaceGestionnaire();
-				fenetreGestionnaire.frame.setVisible(true);
+				//InterfaceGestionnaire fenetreGestionnaire = new InterfaceGestionnaire();
+				//fenetreGestionnaire.frame.setVisible(true);
 				
 				frame.dispose();
 			}
