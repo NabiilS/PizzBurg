@@ -76,7 +76,17 @@ public class InterfaceGestionnaire {
 				
 			}
 		});
-		btnAddCommande.setBounds(132, 161, 157, 44);
+		btnAddCommande.setBounds(130, 206, 157, 44);
 		frame.getContentPane().add(btnAddCommande);
+		
+		JButton btnAddPizza = new JButton("Ajouter des Pizzas");
+		btnAddPizza.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InterfaceAjoutPizza interfaceAjouterPizza= new InterfaceAjoutPizza();
+				interfaceAjouterPizza.frame.setVisible(true);
+			}
+		});
+		btnAddPizza.setBounds(138, 95, 139, 44);
+		frame.getContentPane().add(btnAddPizza);
 	}
 }
