@@ -76,7 +76,7 @@ public class InterfaceGestionnaire {
 				
 			}
 		});
-		btnAddCommande.setBounds(130, 150, 157, 44);
+		btnAddCommande.setBounds(118, 149, 157, 44);
 		frame.getContentPane().add(btnAddCommande);
 		
 		JButton btnAddPizza = new JButton("Ajouter des Pizzas");
@@ -100,7 +100,7 @@ public class InterfaceGestionnaire {
 				interfaceAjouterIngredient.frame.setVisible(true);
 			}
 		});
-		btnAddIngredient.setBounds(130, 205, 157, 44);
+		btnAddIngredient.setBounds(31, 203, 157, 44);
 		frame.getContentPane().add(btnAddIngredient);
 		
 		JButton btnDeleteClient = new JButton("Supprimer des clients");
@@ -122,5 +122,15 @@ public class InterfaceGestionnaire {
 		});
 		btnDeletePizza.setBounds(230, 96, 157, 44);
 		frame.getContentPane().add(btnDeletePizza);
+		
+		JButton btnSupprimerIngrdients = new JButton("Supprimer des ingr\u00E9dients");
+		btnSupprimerIngrdients.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InterfaceSupprimerIngredient interfaceSupprimerIngredient = new InterfaceSupprimerIngredient ();
+				interfaceSupprimerIngredient.frame.setVisible(true);
+			}
+		});
+		btnSupprimerIngrdients.setBounds(230, 199, 157, 44);
+		frame.getContentPane().add(btnSupprimerIngrdients);
 	}
 }
