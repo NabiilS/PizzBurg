@@ -65,7 +65,7 @@ public class InterfaceGestionnaire {
 			}
 			
 		});
-		btnAddClient.setBounds(130, 40, 157, 44);
+		btnAddClient.setBounds(31, 41, 157, 44);
 		frame.getContentPane().add(btnAddClient);
 		
 		btnAddCommande = new JButton("Ajouter des commandes");
@@ -102,5 +102,15 @@ public class InterfaceGestionnaire {
 		});
 		btnAddIngredient.setBounds(130, 205, 157, 44);
 		frame.getContentPane().add(btnAddIngredient);
+		
+		JButton btnDeleteClient = new JButton("Supprimer des clients");
+		btnDeleteClient.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InterfaceSupprimerClient interfaceSupprimerClient= new InterfaceSupprimerClient();
+				interfaceSupprimerClient.frame.setVisible(true);
+			}
+		});
+		btnDeleteClient.setBounds(230, 41, 157, 44);
+		frame.getContentPane().add(btnDeleteClient);
 	}
 }
