@@ -41,7 +41,7 @@ public class InterfaceGestionnaire {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 463, 348);
+		frame.setBounds(100, 100, 463, 605);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -76,7 +76,7 @@ public class InterfaceGestionnaire {
 				
 			}
 		});
-		btnAddCommande.setBounds(118, 149, 157, 44);
+		btnAddCommande.setBounds(140, 484, 157, 44);
 		frame.getContentPane().add(btnAddCommande);
 		
 		JButton btnAddPizza = new JButton("Ajouter des Pizzas");
@@ -90,7 +90,7 @@ public class InterfaceGestionnaire {
 		frame.getContentPane().add(btnAddPizza);
 		
 		JButton btnModifIngredient = new JButton("Gestion des ingredients");
-		btnModifIngredient.setBounds(287, 253, 145, 32);
+		btnModifIngredient.setBounds(294, 526, 145, 32);
 		frame.getContentPane().add(btnModifIngredient);
 		
 		JButton btnAddIngredient = new JButton("Ajouter des ingr\u00E9dients");
@@ -100,7 +100,7 @@ public class InterfaceGestionnaire {
 				interfaceAjouterIngredient.frame.setVisible(true);
 			}
 		});
-		btnAddIngredient.setBounds(31, 203, 157, 44);
+		btnAddIngredient.setBounds(31, 149, 157, 44);
 		frame.getContentPane().add(btnAddIngredient);
 		
 		JButton btnDeleteClient = new JButton("Supprimer des clients");
@@ -130,7 +130,47 @@ public class InterfaceGestionnaire {
 				interfaceSupprimerIngredient.frame.setVisible(true);
 			}
 		});
-		btnSupprimerIngrdients.setBounds(230, 199, 157, 44);
+		btnSupprimerIngrdients.setBounds(230, 149, 157, 44);
 		frame.getContentPane().add(btnSupprimerIngrdients);
+		
+		JButton btnAjouterDesCuisiniers = new JButton("Ajouter des cuisiniers");
+		btnAjouterDesCuisiniers.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InterfaceAjoutCuisinier interfaceAjoutCuisinier = new InterfaceAjoutCuisinier();
+				interfaceAjoutCuisinier.frame.setVisible(true);
+			}
+		});
+		btnAjouterDesCuisiniers.setBounds(31, 203, 157, 44);
+		frame.getContentPane().add(btnAjouterDesCuisiniers);
+		
+		JButton btnAjouterDesLivreurs = new JButton("Ajouter des livreurs");
+		btnAjouterDesLivreurs.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InterfaceAjoutLivreur interfaceAjoutLivreur = new InterfaceAjoutLivreur ();
+				interfaceAjoutLivreur.frame.setVisible(true);
+			}
+		});
+		btnAjouterDesLivreurs.setBounds(31, 257, 157, 44);
+		frame.getContentPane().add(btnAjouterDesLivreurs);
+		
+		JButton btnSupprimerDesCuisiniers = new JButton("Supprimer des cuisiniers");
+		btnSupprimerDesCuisiniers.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InterfaceSupprimerCuisinier interfaceSupprimerCuisinier = new InterfaceSupprimerCuisinier ();
+				interfaceSupprimerCuisinier.frame.setVisible(true);
+			}
+		});
+		btnSupprimerDesCuisiniers.setBounds(230, 203, 157, 44);
+		frame.getContentPane().add(btnSupprimerDesCuisiniers);
+		
+		JButton btnSupprimerDesLivreurs = new JButton("Supprimer des livreurs");
+		btnSupprimerDesLivreurs.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InterfaceSupprimerLivreur interfaceSupprimerLivreur = new InterfaceSupprimerLivreur ();
+				interfaceSupprimerLivreur.frame.setVisible(true);
+			}
+		});
+		btnSupprimerDesLivreurs.setBounds(230, 257, 157, 44);
+		frame.getContentPane().add(btnSupprimerDesLivreurs);
 	}
 }

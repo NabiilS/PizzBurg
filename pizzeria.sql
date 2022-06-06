@@ -44,7 +44,7 @@ CREATE TABLE Cuisinier(
    idCuisinier INT AUTO_INCREMENT,
    nomCuisinier VARCHAR(50),
    prenomCuisinier VARCHAR(50),
-   numTel INT,
+   numTel VARCHAR(50),
    PRIMARY KEY(idCuisinier)
 );
 
@@ -52,7 +52,7 @@ CREATE TABLE Livreur(
    idLivreur INT AUTO_INCREMENT,
    nomLivreur VARCHAR(50) NOT NULL,
    prenomLivreur VARCHAR(50),
-   numTel INT,
+   numTel VARCHAR(50),
    PRIMARY KEY(idLivreur)
 );
 

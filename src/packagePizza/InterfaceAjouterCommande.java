@@ -22,7 +22,7 @@ public class InterfaceAjouterCommande {
 	public JFrame frame;
 	private JTextField textidClient;
 	private JTextField textPrenomClient;
-	private JTextField textTelClient;
+	private JTextField textNomClient;
 	
 	// Ajouté pour la connexion
 	private static Connection connection = null;
@@ -60,7 +60,7 @@ public class InterfaceAjouterCommande {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 600, 512);
+		frame.setBounds(100, 100, 1128, 473);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -68,47 +68,47 @@ public class InterfaceAjouterCommande {
 
 		
 		
-		final JComboBox comboBoxNomClient = new JComboBox();
-		comboBoxNomClient.setBounds(35, 39, 180, 21);
-		frame.getContentPane().add(comboBoxNomClient);
+		final JComboBox comboBoxTelClient = new JComboBox();
+		comboBoxTelClient.setBounds(10, 39, 180, 21);
+		frame.getContentPane().add(comboBoxTelClient);
 		
 		final JComboBox comboBoxPizza = new JComboBox();
-		comboBoxPizza.setBounds(309, 38, 180, 21);
+		comboBoxPizza.setBounds(329, 39, 180, 21);
 		frame.getContentPane().add(comboBoxPizza);
 		
 		textidClient = new JTextField();
-		textidClient.setBounds(35, 106, 180, 19);
+		textidClient.setBounds(10, 105, 180, 19);
 		frame.getContentPane().add(textidClient);
 		textidClient.setColumns(10);
 		
 		JLabel lblidClient = new JLabel("Identifiant");
 		lblidClient.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblidClient.setBounds(75, 82, 77, 13);
+		lblidClient.setBounds(10, 82, 77, 13);
 		frame.getContentPane().add(lblidClient);
 		
 		textPrenomClient = new JTextField();
 		textPrenomClient.setColumns(10);
-		textPrenomClient.setBounds(35, 158, 180, 19);
+		textPrenomClient.setBounds(10, 157, 180, 19);
 		frame.getContentPane().add(textPrenomClient);
 		
 		JLabel lblPrenomClient = new JLabel("Prenom");
 		lblPrenomClient.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblPrenomClient.setBounds(91, 134, 77, 13);
+		lblPrenomClient.setBounds(10, 134, 77, 13);
 		frame.getContentPane().add(lblPrenomClient);
 		
-		textTelClient = new JTextField();
-		textTelClient.setColumns(10);
-		textTelClient.setBounds(35, 212, 180, 19);
-		frame.getContentPane().add(textTelClient);
+		textNomClient = new JTextField();
+		textNomClient.setColumns(10);
+		textNomClient.setBounds(10, 211, 180, 19);
+		frame.getContentPane().add(textNomClient);
 		
 		JLabel lblTelClient = new JLabel("T\u00E9l\u00E9phone");
 		lblTelClient.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblTelClient.setBounds(75, 188, 77, 13);
+		lblTelClient.setBounds(10, 16, 77, 13);
 		frame.getContentPane().add(lblTelClient);
 		
-		JLabel lblNomClient = new JLabel("Client");
+		JLabel lblNomClient = new JLabel("Nom");
 		lblNomClient.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblNomClient.setBounds(91, 23, 102, 13);
+		lblNomClient.setBounds(10, 186, 102, 13);
 		frame.getContentPane().add(lblNomClient);
 		
 		/* Variable de debug pour vérifier si la connexion a bien été établi */
@@ -141,7 +141,7 @@ public class InterfaceAjouterCommande {
 		
 		
 		while(resultClient.next()) {
-			comboBoxNomClient.addItem(resultClient.getString("nomClient"));
+			comboBoxTelClient.addItem(resultClient.getString("nomClient"));
 		}
 		while (resultPizza.next()) {
 			//comboboxPizza.addItem(resultPizza.getString(0));
@@ -165,14 +165,14 @@ public class InterfaceAjouterCommande {
 			}
 		});
 		btnNewButton.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnNewButton.setBounds(206, 300, 122, 49);
+		btnNewButton.setBounds(191, 355, 122, 49);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnAfficher = new JButton("Afficher");
 		btnAfficher.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					selectClient(comboBoxNomClient.getSelectedItem().toString());
+					selectClient(comboBoxTelClient.getSelectedItem().toString());
 				} catch (Exception z) {
 					throw new RuntimeException("Erreur detecte");
 				}
@@ -180,44 +180,44 @@ public class InterfaceAjouterCommande {
 		});
 	
 		btnAfficher.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnAfficher.setBounds(66, 251, 102, 33);
+		btnAfficher.setBounds(48, 251, 102, 33);
 		frame.getContentPane().add(btnAfficher);
 		
 
 		
 		JLabel lblListPizza = new JLabel("Pizza");
 		lblListPizza.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblListPizza.setBounds(365, 23, 102, 13);
+		lblListPizza.setBounds(329, 16, 102, 13);
 		frame.getContentPane().add(lblListPizza);
 		
 		JLabel lblid_1 = new JLabel("Identifiant");
 		lblid_1.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblid_1.setBounds(349, 82, 77, 13);
+		lblid_1.setBounds(329, 82, 77, 13);
 		frame.getContentPane().add(lblid_1);
 		
 		textIdPizza = new JTextField();
 		textIdPizza.setColumns(10);
-		textIdPizza.setBounds(309, 106, 180, 19);
+		textIdPizza.setBounds(329, 106, 180, 19);
 		frame.getContentPane().add(textIdPizza);
 		
 		JLabel lblTaillePizza = new JLabel("Taille");
 		lblTaillePizza.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblTaillePizza.setBounds(365, 134, 77, 13);
+		lblTaillePizza.setBounds(329, 134, 77, 13);
 		frame.getContentPane().add(lblTaillePizza);
 		
 		textTaillePizza = new JTextField();
 		textTaillePizza.setColumns(10);
-		textTaillePizza.setBounds(309, 158, 180, 19);
+		textTaillePizza.setBounds(329, 158, 180, 19);
 		frame.getContentPane().add(textTaillePizza);
 		
 		JLabel lblPrixPizza = new JLabel("Prix");
 		lblPrixPizza.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblPrixPizza.setBounds(375, 188, 77, 13);
+		lblPrixPizza.setBounds(329, 189, 77, 13);
 		frame.getContentPane().add(lblPrixPizza);
 		
 		textPrixPizza = new JTextField();
 		textPrixPizza.setColumns(10);
-		textPrixPizza.setBounds(309, 212, 180, 19);
+		textPrixPizza.setBounds(329, 212, 180, 19);
 		frame.getContentPane().add(textPrixPizza);
 		
 		JButton btnAfficher_1 = new JButton("Afficher");
@@ -232,8 +232,13 @@ public class InterfaceAjouterCommande {
 			} 
 		});
 		btnAfficher_1.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnAfficher_1.setBounds(340, 251, 102, 33);
+		btnAfficher_1.setBounds(363, 251, 102, 33);
 		frame.getContentPane().add(btnAfficher_1);
+		
+		JButton btnAjouterCommande = new JButton("Ajouter");
+		btnAjouterCommande.setFont(new Font("Rockwell", Font.PLAIN, 14));
+		btnAjouterCommande.setBounds(191, 296, 122, 49);
+		frame.getContentPane().add(btnAjouterCommande);
 	}
 	public void selectClient(String nomClient) throws SQLException{
 		
@@ -250,7 +255,7 @@ public class InterfaceAjouterCommande {
 			
 			textidClient.setText(idClient);
 			textPrenomClient.setText(prenomClient);
-			textTelClient.setText(telClient);
+			textNomClient.setText(telClient);
 			
 			// Debug
 			
