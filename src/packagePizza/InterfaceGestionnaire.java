@@ -76,7 +76,7 @@ public class InterfaceGestionnaire {
 				
 			}
 		});
-		btnAddCommande.setBounds(140, 484, 157, 44);
+		btnAddCommande.setBounds(132, 329, 157, 44);
 		frame.getContentPane().add(btnAddCommande);
 		
 		JButton btnAddPizza = new JButton("Ajouter des Pizzas");

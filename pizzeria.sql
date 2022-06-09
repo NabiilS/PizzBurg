@@ -20,10 +20,10 @@ CREATE TABLE Client(
 
 CREATE TABLE Adresse(
    idAdresse INT AUTO_INCREMENT,
-   numRue INT,
+   libAdresse VARCHAR(50),
    ville VARCHAR(50),
    codePostale INT,
-   completementAdresse VARCHAR(50),
+   complementAdresse VARCHAR(50),
    PRIMARY KEY(idAdresse)
 );
 
