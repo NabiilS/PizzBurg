@@ -29,7 +29,7 @@ public class InterfaceAjoutPizza {
 	private JTextField textNomPizza;
 	private JTextField textPrix;
 	
-	// Ajouté pour la connexion
+	// Ajoutï¿½ pour la connexion
 	private static Connection connection = null;
 	private static Scanner scanner = new Scanner(System.in);
 
@@ -69,7 +69,7 @@ public class InterfaceAjoutPizza {
 		
 		JLabel lblnomPizza = new JLabel("Pizza");
 		lblnomPizza.setFont(new Font("The Next Font", Font.PLAIN, 20));
-		lblnomPizza.setBounds(209, 33, 89, 21);
+		lblnomPizza.setBounds(205, 33, 89, 21);
 		frame.getContentPane().add(lblnomPizza);
 		
 		textNomPizza = new JTextField();
@@ -93,7 +93,7 @@ public class InterfaceAjoutPizza {
 		frame.getContentPane().add(textPrix);
 		
 		final JComboBox comboBoxTaillePizza = new JComboBox();
-		comboBoxTaillePizza.setFont(new Font("Arial", Font.PLAIN, 15));
+		comboBoxTaillePizza.setFont(new Font("Cambria", Font.PLAIN, 15));
 		comboBoxTaillePizza.setModel(new DefaultComboBoxModel(new String[] {"Petite", "Moyenne", "Grande"}));
 		comboBoxTaillePizza.setMaximumRowCount(3);
 		comboBoxTaillePizza.setBounds(160, 124, 138, 21);
@@ -139,7 +139,7 @@ public class InterfaceAjoutPizza {
 					int rows = preparedStatement.executeUpdate();
 					
 					if(rows > 0) {
-						System.out.println("Insertion exécuté avec succès");
+						System.out.println("Insertion exï¿½cutï¿½ avec succï¿½s");
 					}
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
@@ -151,7 +151,7 @@ public class InterfaceAjoutPizza {
 			}
 		});
 		btnAjouter.setFont(new Font("Tahoma", Font.PLAIN, 21));
-		btnAjouter.setBounds(148, 216, 159, 39);
+		btnAjouter.setBounds(148, 217, 159, 38);
 		frame.getContentPane().add(btnAjouter);
 		
 		JButton btnAnnuler = new JButton("Annuler");
@@ -187,15 +187,15 @@ public class InterfaceAjoutPizza {
 			}
 		});
 		btnConsulterPizza.setFont(new Font("Tahoma", Font.PLAIN, 21));
-		btnConsulterPizza.setBounds(330, 249, 123, 29);
+		btnConsulterPizza.setBounds(328, 266, 123, 29);
 		frame.getContentPane().add(btnConsulterPizza);
 		
 
 		if (coReussi = true) {
-			labelBdd.setText("Connexion réussi!");
+			labelBdd.setText("Connexion rï¿½ussi!");
 			labelBdd.setForeground(Color.GREEN);
 		} else {
-			labelBdd.setText("La connexion à echoué");
+			labelBdd.setText("La connexion ï¿½ echouï¿½");
 			labelBdd.setForeground(Color.RED);
 		}
 		

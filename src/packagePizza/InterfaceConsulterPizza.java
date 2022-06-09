@@ -22,11 +22,10 @@ import java.awt.event.ActionEvent;
 public class InterfaceConsulterPizza {
 
 	public JFrame frame;
-	private JTextField textTaillePizza;
 	private JTextField textPrixPizza;
 	private JTextField textNomPizza;
 	
-	// Ajouté pour la connexion
+	// Ajoutï¿½ pour la connexion
 	private static Connection connection = null;
 	private static Scanner scanner = new Scanner(System.in);
 
@@ -71,11 +70,6 @@ public class InterfaceConsulterPizza {
 		comboBoxidPizza.setBounds(131, 38, 180, 21);
 		frame.getContentPane().add(comboBoxidPizza);
 		
-		textTaillePizza = new JTextField();
-		textTaillePizza.setBounds(131, 155, 180, 19);
-		frame.getContentPane().add(textTaillePizza);
-		textTaillePizza.setColumns(10);
-		
 		JLabel lblTaillePizza = new JLabel("Taille");
 		lblTaillePizza.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
 		lblTaillePizza.setBounds(133, 132, 46, 13);
@@ -106,7 +100,7 @@ public class InterfaceConsulterPizza {
 		lblNomPizza.setBounds(131, 79, 102, 13);
 		frame.getContentPane().add(lblNomPizza);
 		
-		/* Variable de debug pour vérifier si la connexion a bien été établi */
+		/* Variable de debug pour vï¿½rifier si la connexion a bien ï¿½tï¿½ ï¿½tabli */
 		boolean coReussi = false;
 		
 		// Connexion
@@ -139,7 +133,7 @@ public class InterfaceConsulterPizza {
 		
 		}
 		catch (Exception e) {
-			throw new RuntimeException("Erreur détecté");
+			throw new RuntimeException("Erreur dï¿½tectï¿½");
 		
 			
 		}
@@ -174,6 +168,11 @@ public class InterfaceConsulterPizza {
 		btnAfficher.setFont(new Font("Rockwell", Font.PLAIN, 14));
 		btnAfficher.setBounds(172, 236, 102, 33);
 		frame.getContentPane().add(btnAfficher);
+		String[] taille = {"M", "L", "XL" };
+		JComboBox comboBoxidPizza_1 = new JComboBox(taille);
+		comboBoxidPizza_1.setToolTipText("");
+		comboBoxidPizza_1.setBounds(131, 156, 180, 21);
+		frame.getContentPane().add(comboBoxidPizza_1);
 	}
 	public void selectClient(String idPizza) throws SQLException{
 		
@@ -190,7 +189,7 @@ public class InterfaceConsulterPizza {
 			String taillePizza = result.getString("taillePizza");
 			String prixPizza = result.getString("prixPizza");
 			
-			textTaillePizza.setText(taillePizza);
+			
 			textPrixPizza.setText(prixPizza);
 			textNomPizza.setText(nomPizza);
 			
@@ -202,7 +201,7 @@ public class InterfaceConsulterPizza {
 			System.out.println("telClient: " +telClient); 
 			*/
 			
-		} else System.out.println("Pas de données trouvés...");
+		} else System.out.println("Pas de donnï¿½es trouvï¿½s...");
 		
 	}
 }
