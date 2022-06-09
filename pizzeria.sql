@@ -20,10 +20,10 @@ CREATE TABLE Client(
 
 CREATE TABLE Adresse(
    idAdresse INT AUTO_INCREMENT,
-   numRue INT,
+   libAdresse VARCHAR(50),
    ville VARCHAR(50),
    codePostale INT,
-   completementAdresse VARCHAR(50),
+   complementAdresse VARCHAR(50),
    PRIMARY KEY(idAdresse)
 );
 
@@ -44,7 +44,7 @@ CREATE TABLE Cuisinier(
    idCuisinier INT AUTO_INCREMENT,
    nomCuisinier VARCHAR(50),
    prenomCuisinier VARCHAR(50),
-   numTel INT,
+   numTel VARCHAR(50),
    PRIMARY KEY(idCuisinier)
 );
 
@@ -52,7 +52,7 @@ CREATE TABLE Livreur(
    idLivreur INT AUTO_INCREMENT,
    nomLivreur VARCHAR(50) NOT NULL,
    prenomLivreur VARCHAR(50),
-   numTel INT,
+   numTel VARCHAR(50),
    PRIMARY KEY(idLivreur)
 );
 

@@ -11,6 +11,10 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Users/alexi/git/PizzBurg/mysql-connector-java-8.0.29/mysql-connector-java-8.0.29.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/Users/Admin/git/PizzBurg/mysql-connector-java-8.0.29/mysql-connector-java-8.0.29.jar"/>
+>>>>>>> 16a024e0d9360e6b98dbb854cbd6ea893b46b642
 	<classpathentry kind="output" path="bin"/>
 </classpath>
