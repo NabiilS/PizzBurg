@@ -9,6 +9,12 @@ import javax.swing.JList;
 import javax.swing.JSeparator;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
@@ -16,6 +22,11 @@ import javax.swing.DefaultComboBoxModel;
 public class InterfaceLivreur {
 
 	public JFrame frame;
+	
+	// Ajouté pour la connexion
+	private static Connection connection = null;
+	private static Scanner scanner = new Scanner(System.in);
+
 
 	/**
 	 * Launch the application.
@@ -48,6 +59,47 @@ public class InterfaceLivreur {
 		frame.setBounds(100, 100, 461, 548);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
+		
+		final JComboBox comboBoxTelephoneLivreur = new JComboBox();
+		comboBoxTelephoneLivreur.setBounds(127, 126, 172, 22);
+		frame.getContentPane().add(comboBoxTelephoneLivreur);
+		
+		/* Variable de debug pour vérifier si la connexion a bien été établi */
+		boolean coReussi = false;
+		
+		// Connexion
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+		
+		
+		String dbURL = "jdbc:mysql://localhost:3306/pizzeria"; /* Commande pour savoir le port mysql: show global variables like 'PORT'; */
+		String dbUsername = "root";
+		String password = "";
+		
+		connection = DriverManager.getConnection(dbURL, dbUsername, password);
+		coReussi = true;
+		
+		
+		//int idSelect = Integer.parseInt(scanner.nextLine());
+		
+		String sql = "select * from Livreur";
+		
+		
+		Statement statement = connection.createStatement();
+		
+		ResultSet result = statement.executeQuery(sql);
+		
+		
+		while(result.next()) {
+			comboBoxTelephoneLivreur.addItem(result.getString(4));
+			}
+
+		}
+		catch (Exception e) {
+			throw new RuntimeException("Erreur détecté");
+		
+			
+		}
 		
 		JLabel lblAccueil = new JLabel("      Accueil");
 		lblAccueil.setFont(new Font("Rockwell", Font.PLAIN, 30));
@@ -103,18 +155,59 @@ public class InterfaceLivreur {
 		btnNewButton.setBounds(125, 388, 162, 33);
 		frame.getContentPane().add(btnNewButton);
 		
-		JLabel lblListeLivreur = new JLabel("Je suis");
-		lblListeLivreur.setFont(new Font("Rockwell", Font.PLAIN, 20));
-		lblListeLivreur.setBounds(62, 113, 263, 42);
-		frame.getContentPane().add(lblListeLivreur);
+		JLabel lblListeTelLivreur = new JLabel("Mon t\u00E9l\u00E9phone");
+		lblListeTelLivreur.setFont(new Font("Rockwell", Font.PLAIN, 20));
+		lblListeTelLivreur.setBounds(136, 91, 263, 42);
+		frame.getContentPane().add(lblListeTelLivreur);
 		
-		JComboBox comboBoxListLivreur = new JComboBox();
-		comboBoxListLivreur.setBounds(127, 126, 172, 22);
-		frame.getContentPane().add(comboBoxListLivreur);
+
 		
 		JButton btnLivreurValider = new JButton("Valider");
+		btnLivreurValider.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					
+					// Debug pour vérifier si le numéro de téléphone est bon
+					//System.out.print(selectLivreur(comboBoxTelephoneLivreur.getSelectedItem().toString()));
+					selectLivreur(comboBoxTelephoneLivreur.getSelectedItem().toString());
+					
+					
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+		});
 		btnLivreurValider.setFont(new Font("Rockwell", Font.PLAIN, 16));
 		btnLivreurValider.setBounds(153, 158, 100, 30);
 		frame.getContentPane().add(btnLivreurValider);
+	}
+	public String selectLivreur(String telLivreur ) throws SQLException{
+		
+		String sql = "select * from livreur where numTel ="+ "'" + telLivreur+ "'";
+		Statement statement = connection.createStatement();
+		
+		ResultSet result = statement.executeQuery(sql);
+		
+		if(result.next()) {
+			
+			
+			
+			String numTel = result.getString("numTel");
+			return numTel;
+			
+			
+			// Debug
+			
+			/*System.out.println("idClient: " +idClient);
+			System.out.println("nomClient: " +nomClient);
+			System.out.println("prenomClient: " +prenomClient);
+			System.out.println("telClient: " +telClient); 
+			*/
+			
+		} else System.out.println("Pas de données trouvés...");
+		return "Pas de donnée...";
+		
 	}
 }
