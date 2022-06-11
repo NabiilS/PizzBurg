@@ -45,7 +45,7 @@ public class InterfaceLivreur {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 461, 548);
+		frame.setBounds(100, 100, 450, 300);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -61,7 +61,7 @@ public class InterfaceLivreur {
 		
 		JLabel lblListeDesCommandes = new JLabel("Liste des commandes");
 		lblListeDesCommandes.setFont(new Font("Rockwell", Font.PLAIN, 20));
-		lblListeDesCommandes.setBounds(117, 254, 292, 42);
+		lblListeDesCommandes.setBounds(118, 77, 292, 42);
 		frame.getContentPane().add(lblListeDesCommandes);
 		
 		JButton btnRetour = new JButton("Retour");
@@ -76,19 +76,19 @@ public class InterfaceLivreur {
 		btnRetour.setBounds(7, 11, 89, 23);
 		frame.getContentPane().add(btnRetour);
 		
-		JComboBox comboBoxListCommande = new JComboBox();
-		comboBoxListCommande.setModel(new DefaultComboBoxModel(new String[] {"Test1", "Test2", "Test3"}));
-		comboBoxListCommande.setBounds(127, 289, 172, 22);
-		frame.getContentPane().add(comboBoxListCommande);
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Test1", "Test2", "Test3"}));
+		comboBox.setBounds(128, 112, 172, 22);
+		frame.getContentPane().add(comboBox);
 		
 		JLabel lblHeureDeLivraison = new JLabel("Heure de livraison souhait\u00E9:");
 		lblHeureDeLivraison.setFont(new Font("Rockwell", Font.PLAIN, 20));
-		lblHeureDeLivraison.setBounds(87, 307, 292, 42);
+		lblHeureDeLivraison.setBounds(88, 130, 292, 42);
 		frame.getContentPane().add(lblHeureDeLivraison);
 		
 		JLabel lblNewLabel = new JLabel("15:30");
 		lblNewLabel.setFont(new Font("Rockwell", Font.BOLD, 26));
-		lblNewLabel.setBounds(170, 344, 83, 33);
+		lblNewLabel.setBounds(171, 167, 83, 33);
 		frame.getContentPane().add(lblNewLabel);
 		
 		JButton btnNewButton = new JButton("D\u00E9tail du client");
@@ -100,21 +100,7 @@ public class InterfaceLivreur {
 			}
 		});
 		btnNewButton.setFont(new Font("Rockwell", Font.PLAIN, 16));
-		btnNewButton.setBounds(125, 388, 162, 33);
+		btnNewButton.setBounds(126, 211, 162, 33);
 		frame.getContentPane().add(btnNewButton);
-		
-		JLabel lblListeLivreur = new JLabel("Je suis");
-		lblListeLivreur.setFont(new Font("Rockwell", Font.PLAIN, 20));
-		lblListeLivreur.setBounds(62, 113, 263, 42);
-		frame.getContentPane().add(lblListeLivreur);
-		
-		JComboBox comboBoxListLivreur = new JComboBox();
-		comboBoxListLivreur.setBounds(127, 126, 172, 22);
-		frame.getContentPane().add(comboBoxListLivreur);
-		
-		JButton btnLivreurValider = new JButton("Valider");
-		btnLivreurValider.setFont(new Font("Rockwell", Font.PLAIN, 16));
-		btnLivreurValider.setBounds(153, 158, 100, 30);
-		frame.getContentPane().add(btnLivreurValider);
 	}
 }
