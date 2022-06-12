@@ -18,6 +18,9 @@ import java.util.Scanner;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
+import javax.swing.JTextField;
 
 public class InterfaceLivreur {
 
@@ -26,6 +29,11 @@ public class InterfaceLivreur {
 	// Ajouté pour la connexion
 	private static Connection connection = null;
 	private static Scanner scanner = new Scanner(System.in);
+	private JTextField textfieldLibAdresse;
+	private JTextField textfieldTelephoneClient;
+	private JTextField textfieldVille;
+	private JTextField textfieldCodePostale;
+	private JTextField textfieldComplementAdresse;
 
 
 	/**
@@ -56,13 +64,19 @@ public class InterfaceLivreur {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 461, 548);
+		frame.setBounds(100, 100, 432, 659);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
 		final JComboBox comboBoxTelephoneLivreur = new JComboBox();
 		comboBoxTelephoneLivreur.setBounds(127, 126, 172, 22);
 		frame.getContentPane().add(comboBoxTelephoneLivreur);
+		
+		final JLabel lblHeureLivraison = new JLabel("15:30");
+		lblHeureLivraison.setFont(new Font("Rockwell", Font.BOLD, 26));
+		lblHeureLivraison.setBounds(170, 326, 83, 33);
+		lblHeureLivraison.setVisible(false);
+		frame.getContentPane().add(lblHeureLivraison);
 		
 		/* Variable de debug pour vérifier si la connexion a bien été établi */
 		boolean coReussi = false;
@@ -93,12 +107,9 @@ public class InterfaceLivreur {
 		while(result.next()) {
 			comboBoxTelephoneLivreur.addItem(result.getString(4));
 			}
-
 		}
 		catch (Exception e) {
 			throw new RuntimeException("Erreur détecté");
-		
-			
 		}
 		
 		JLabel lblAccueil = new JLabel("      Accueil");
@@ -113,7 +124,7 @@ public class InterfaceLivreur {
 		
 		JLabel lblListeDesCommandes = new JLabel("Liste des commandes");
 		lblListeDesCommandes.setFont(new Font("Rockwell", Font.PLAIN, 20));
-		lblListeDesCommandes.setBounds(117, 254, 292, 42);
+		lblListeDesCommandes.setBounds(107, 198, 292, 42);
 		frame.getContentPane().add(lblListeDesCommandes);
 		
 		JButton btnRetour = new JButton("Retour");
@@ -128,36 +139,34 @@ public class InterfaceLivreur {
 		btnRetour.setBounds(7, 11, 89, 23);
 		frame.getContentPane().add(btnRetour);
 		
-		JComboBox comboBoxListCommande = new JComboBox();
-		comboBoxListCommande.setModel(new DefaultComboBoxModel(new String[] {"Test1", "Test2", "Test3"}));
-		comboBoxListCommande.setBounds(127, 289, 172, 22);
+		final JComboBox comboBoxListCommande = new JComboBox();
+		comboBoxListCommande.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				try {
+					lblHeureLivraison.setText(getHeureArrive(comboBoxListCommande.getSelectedItem().toString()));
+					textfieldTelephoneClient.setText(getTelClient(comboBoxListCommande.getSelectedItem().toString()));
+					textfieldLibAdresse.setText(getLibAdresse(comboBoxListCommande.getSelectedItem().toString()));
+					textfieldVille.setText(getVille(comboBoxListCommande.getSelectedItem().toString()));
+					textfieldCodePostale.setText(getCodePostale(comboBoxListCommande.getSelectedItem().toString()));
+					textfieldComplementAdresse.setText(getComplementAdresse(comboBoxListCommande.getSelectedItem().toString()));
+					
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		comboBoxListCommande.setBounds(127, 250, 172, 22);
 		frame.getContentPane().add(comboBoxListCommande);
 		
 		JLabel lblHeureDeLivraison = new JLabel("Heure de livraison souhait\u00E9:");
 		lblHeureDeLivraison.setFont(new Font("Rockwell", Font.PLAIN, 20));
-		lblHeureDeLivraison.setBounds(87, 307, 292, 42);
+		lblHeureDeLivraison.setBounds(82, 292, 292, 42);
 		frame.getContentPane().add(lblHeureDeLivraison);
 		
-		JLabel lblNewLabel = new JLabel("15:30");
-		lblNewLabel.setFont(new Font("Rockwell", Font.BOLD, 26));
-		lblNewLabel.setBounds(170, 344, 83, 33);
-		frame.getContentPane().add(lblNewLabel);
-		
-		JButton btnNewButton = new JButton("D\u00E9tail du client");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				InterfaceDetailClient newFenetreClient = new InterfaceDetailClient();
-				newFenetreClient.frame.setVisible(true);
-				
-			}
-		});
-		btnNewButton.setFont(new Font("Rockwell", Font.PLAIN, 16));
-		btnNewButton.setBounds(125, 388, 162, 33);
-		frame.getContentPane().add(btnNewButton);
-		
-		JLabel lblListeTelLivreur = new JLabel("Mon t\u00E9l\u00E9phone");
+		JLabel lblListeTelLivreur = new JLabel("T\u00E9l\u00E9phone du livreur");
 		lblListeTelLivreur.setFont(new Font("Rockwell", Font.PLAIN, 20));
-		lblListeTelLivreur.setBounds(136, 91, 263, 42);
+		lblListeTelLivreur.setBounds(111, 91, 263, 42);
 		frame.getContentPane().add(lblListeTelLivreur);
 		
 
@@ -169,8 +178,13 @@ public class InterfaceLivreur {
 					
 					// Debug pour vérifier si le numéro de téléphone est bon
 					//System.out.print(selectLivreur(comboBoxTelephoneLivreur.getSelectedItem().toString()));
-					selectLivreur(comboBoxTelephoneLivreur.getSelectedItem().toString());
 					
+					comboBoxListCommande.removeAllItems();		
+					selectLivreur(comboBoxTelephoneLivreur.getSelectedItem().toString());
+					selectCommande(comboBoxListCommande,comboBoxTelephoneLivreur.getSelectedItem().toString(),lblHeureLivraison );
+					lblHeureLivraison.setVisible(true);
+					
+
 					
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
@@ -182,7 +196,161 @@ public class InterfaceLivreur {
 		btnLivreurValider.setFont(new Font("Rockwell", Font.PLAIN, 16));
 		btnLivreurValider.setBounds(153, 158, 100, 30);
 		frame.getContentPane().add(btnLivreurValider);
+		
+		JLabel lblAdresseDeLivraison = new JLabel("Adresse de livraison");
+		lblAdresseDeLivraison.setFont(new Font("Rockwell", Font.PLAIN, 20));
+		lblAdresseDeLivraison.setBounds(7, 358, 292, 42);
+		frame.getContentPane().add(lblAdresseDeLivraison);
+		
+		textfieldLibAdresse = new JTextField();
+		textfieldLibAdresse.setBounds(7, 394, 180, 19);
+		frame.getContentPane().add(textfieldLibAdresse);
+		textfieldLibAdresse.setColumns(10);
+		
+		textfieldTelephoneClient = new JTextField();
+		textfieldTelephoneClient.setColumns(10);
+		textfieldTelephoneClient.setBounds(87, 495, 267, 19);
+		frame.getContentPane().add(textfieldTelephoneClient);
+		
+		JLabel lblTlphoneDuClient = new JLabel("T\u00E9l\u00E9phone du client");
+		lblTlphoneDuClient.setFont(new Font("Rockwell", Font.PLAIN, 20));
+		lblTlphoneDuClient.setBounds(113, 452, 292, 42);
+		frame.getContentPane().add(lblTlphoneDuClient);
+		
+		textfieldVille = new JTextField();
+		textfieldVille.setColumns(10);
+		textfieldVille.setBounds(197, 394, 115, 19);
+		frame.getContentPane().add(textfieldVille);
+		
+		textfieldCodePostale = new JTextField();
+		textfieldCodePostale.setColumns(10);
+		textfieldCodePostale.setBounds(322, 394, 83, 19);
+		frame.getContentPane().add(textfieldCodePostale);
+		
+		textfieldComplementAdresse = new JTextField();
+		textfieldComplementAdresse.setColumns(10);
+		textfieldComplementAdresse.setBounds(32, 423, 248, 19);
+		frame.getContentPane().add(textfieldComplementAdresse);
 	}
+	public String getComplementAdresse(String idCommande) throws SQLException {
+		
+		String sql = "select * from commande c inner join adresse a on c.idAdresse=a.idAdresse where idCommande ="+idCommande;
+		Statement statement = connection.createStatement();
+		
+		ResultSet result = statement.executeQuery(sql);
+		
+		if(result.next()) {
+			return result.getString("a.complementAdresse");
+		}
+		else System.out.println("Pas de données trouvés...");
+		return "Pas de donnée";
+	}
+	
+	
+	
+	public String getCodePostale(String idCommande) throws SQLException {
+		
+		String sql = "select * from commande c inner join adresse a on c.idAdresse=a.idAdresse where idCommande ="+idCommande;
+		Statement statement = connection.createStatement();
+		
+		ResultSet result = statement.executeQuery(sql);
+		
+		if(result.next()) {
+			return result.getString("a.codePostale");
+		}
+		else System.out.println("Pas de données trouvés...");
+		return "Pas de donnée";
+	}
+	
+	public String getVille(String idCommande) throws SQLException {
+		
+		String sql = "select * from commande c inner join adresse a on c.idAdresse=a.idAdresse where idCommande ="+idCommande;
+		Statement statement = connection.createStatement();
+		
+		ResultSet result = statement.executeQuery(sql);
+		
+		if(result.next()) {
+			return result.getString("a.ville");
+		}
+		else System.out.println("Pas de données trouvés...");
+		return "Pas de donnée";
+	}
+	
+	public String getLibAdresse(String idCommande) throws SQLException {
+		
+		String sql = "select * from commande c inner join adresse a on c.idAdresse=a.idAdresse where idCommande ="+idCommande;
+		Statement statement = connection.createStatement();
+		
+		ResultSet result = statement.executeQuery(sql);
+		
+		if(result.next()) {
+			return result.getString("a.libAdresse");
+		}
+		else System.out.println("Pas de données trouvés...");
+		return "Pas de donnée";
+	}
+	
+	
+	public String getTelClient(String idCommande) throws SQLException {
+		
+		String sql = "select cl.idClient, cl.telClient,c.idCommande from commande c inner join client cl on c.idClient=cl.idClient where idCommande ="+idCommande;
+		Statement statement = connection.createStatement();
+		
+		ResultSet result = statement.executeQuery(sql);
+		
+		if(result.next()) {
+			return result.getString("cl.telClient");
+		}
+		else System.out.println("Pas de données trouvés...");
+		return "Pas de donnée";
+	}
+	
+	
+	public String getHeureArrive(String idCommande) throws SQLException {
+		
+		String sql = "select HeureArrive from commande where idCommande ="+idCommande;
+		Statement statement = connection.createStatement();
+		
+		ResultSet result = statement.executeQuery(sql);
+		
+		if(result.next()) {
+			return result.getString("HeureArrive");
+		}
+		else System.out.println("Pas de données trouvés...");
+		return "Pas de donnée";
+	}
+	
+	
+	public void selectCommande(final JComboBox comboBoxListCommande, String telLivreur, final JLabel lblHeureLivraison  ) throws SQLException{
+		
+		String sql = "select * from livreur l inner join commande c on l.idLivreur = c.idLivreur inner join client cl on c.idClient = cl.idClient where l.numTel = "+ "'"+telLivreur+"'";
+		Statement statement = connection.createStatement();
+		
+		ResultSet result = statement.executeQuery(sql);
+		
+		if(result.next()) {
+			
+			lblHeureLivraison.setText(result.getString("HeureArrive"));
+			
+			while(result.next())  {
+				comboBoxListCommande.addItem(result.getString("idCommande"));
+			}
+			
+			
+			
+			
+			// Debug
+			
+			/*System.out.println("idClient: " +idClient);
+			System.out.println("nomClient: " +nomClient);
+			System.out.println("prenomClient: " +prenomClient);
+			System.out.println("telClient: " +telClient); 
+			*/
+			
+		} else System.out.println("Pas de données trouvés...");
+		
+	}
+	
 	public String selectLivreur(String telLivreur ) throws SQLException{
 		
 		String sql = "select * from livreur where numTel ="+ "'" + telLivreur+ "'";
