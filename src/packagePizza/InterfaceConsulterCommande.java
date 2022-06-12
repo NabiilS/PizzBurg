@@ -59,7 +59,7 @@ public class InterfaceConsulterCommande {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 450, 381);
+		frame.setBounds(100, 100, 948, 531);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -175,9 +175,9 @@ public class InterfaceConsulterCommande {
 		btnAfficher.setBounds(172, 236, 102, 33);
 		frame.getContentPane().add(btnAfficher);
 	}
-	public void selectClient(String idPizza) throws SQLException{
+	public void selectClient(String idCommande) throws SQLException{
 		
-		String sql = "select * from pizza where idPizza ="+idPizza;
+		String sql = "select * from commande c inner join pizza p on c.idPizza=p.idPizza inner join adresse a on c.idAdresse=a.idAdresse inner join client cl on c.idClient=cl.idClient where idCommande ="+idCommande;
 		Statement statement = connection.createStatement();
 		
 		ResultSet result = statement.executeQuery(sql);

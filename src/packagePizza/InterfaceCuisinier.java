@@ -62,6 +62,12 @@ public class InterfaceCuisinier {
 		frame.getContentPane().add(lblAccueil);
 		
 		JButton btnIngrdients = new JButton("Ingr\u00E9dients");
+		btnIngrdients.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InterfaceConsulterIngredient interfaceConsulterIngredient = new InterfaceConsulterIngredient();
+				interfaceConsulterIngredient.frame.setVisible(true);
+			}
+		});
 		btnIngrdients.setFont(new Font("Rockwell", Font.PLAIN, 16));
 		btnIngrdients.setBounds(126, 217, 162, 33);
 		frame.getContentPane().add(btnIngrdients);
@@ -72,6 +78,12 @@ public class InterfaceCuisinier {
 		frame.getContentPane().add(lblCuisinier);
 		
 		JButton btnPizza = new JButton("Pizza");
+		btnPizza.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InterfaceConsulterPizza InterfaceConsulterPizza = new InterfaceConsulterPizza();
+				InterfaceConsulterPizza.frame.setVisible(true);
+			}
+		});
 		btnPizza.setFont(new Font("Rockwell", Font.PLAIN, 16));
 		btnPizza.setBounds(126, 164, 162, 33);
 		frame.getContentPane().add(btnPizza);
@@ -79,8 +91,9 @@ public class InterfaceCuisinier {
 		JButton btnIngrdients_1_1 = new JButton("Commande");
 		btnIngrdients_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				InterfaceCommande newFenetreCommande = new InterfaceCommande();
-				frame.dispose();
+				InterfaceConsulterCommande interfaceConsulterCommande = new InterfaceConsulterCommande();
+				interfaceConsulterCommande.frame.setVisible(true);
+				
 				
 				
 			}

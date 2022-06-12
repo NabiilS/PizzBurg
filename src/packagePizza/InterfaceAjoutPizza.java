@@ -79,7 +79,7 @@ public class InterfaceAjoutPizza {
 		
 		JLabel lblTaillePizza = new JLabel("Taille");
 		lblTaillePizza.setFont(new Font("The Next Font", Font.PLAIN, 20));
-		lblTaillePizza.setBounds(205, 93, 46, 21);
+		lblTaillePizza.setBounds(194, 93, 77, 21);
 		frame.getContentPane().add(lblTaillePizza);
 		
 		JLabel lblPrix = new JLabel("Prix");
