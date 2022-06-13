@@ -18,12 +18,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 import java.awt.event.ActionEvent;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
 
 public class InterfaceConsulterCommande {
 
 	public JFrame frame;
 	private JTextField textTaillePizza;
-	private JTextField textPrixPizza;
 	private JTextField textNomPizza;
 	
 	// Ajouté pour la connexion
@@ -68,43 +69,48 @@ public class InterfaceConsulterCommande {
 		
 		
 		final JComboBox comboBoxIdCommande = new JComboBox();
-		comboBoxIdCommande.setBounds(131, 38, 180, 21);
+		comboBoxIdCommande.setBounds(174, 132, 180, 21);
 		frame.getContentPane().add(comboBoxIdCommande);
 		
 		textTaillePizza = new JTextField();
-		textTaillePizza.setBounds(131, 155, 180, 19);
+		textTaillePizza.setBounds(604, 157, 180, 19);
 		frame.getContentPane().add(textTaillePizza);
 		textTaillePizza.setColumns(10);
 		
 		JLabel lblTaillePizza = new JLabel("Taille");
 		lblTaillePizza.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblTaillePizza.setBounds(133, 132, 46, 13);
+		lblTaillePizza.setBounds(670, 134, 46, 13);
 		frame.getContentPane().add(lblTaillePizza);
-		
-		textPrixPizza = new JTextField();
-		textPrixPizza.setColumns(10);
-		textPrixPizza.setBounds(131, 207, 180, 19);
-		frame.getContentPane().add(textPrixPizza);
-		
-		JLabel lblPrix = new JLabel("Prix");
-		lblPrix.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblPrix.setBounds(131, 184, 77, 13);
-		frame.getContentPane().add(lblPrix);
 		
 		textNomPizza = new JTextField();
 		textNomPizza.setColumns(10);
-		textNomPizza.setBounds(131, 103, 180, 19);
+		textNomPizza.setBounds(604, 105, 180, 19);
 		frame.getContentPane().add(textNomPizza);
 		
-		JLabel lblId = new JLabel("Identifiant");
+		JLabel lblId = new JLabel("Identifiant Commande");
 		lblId.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblId.setBounds(131, 14, 77, 13);
+		lblId.setBounds(174, 109, 191, 13);
 		frame.getContentPane().add(lblId);
 		
 		JLabel lblNomPizza = new JLabel("Nom");
 		lblNomPizza.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblNomPizza.setBounds(131, 79, 102, 13);
+		lblNomPizza.setBounds(664, 82, 102, 13);
 		frame.getContentPane().add(lblNomPizza);
+		
+		final JComboBox comboBoxHeureLivraisonSouhaite = new JComboBox();
+		comboBoxHeureLivraisonSouhaite.addItemListener(new ItemListener() {
+			public void itemStateChanged(ItemEvent e) {
+				//System.out.print("Item changé");
+
+			}
+		});
+		comboBoxHeureLivraisonSouhaite.setBounds(10, 219, 198, 21);
+		frame.getContentPane().add(comboBoxHeureLivraisonSouhaite);
+		
+		JLabel lblHeureDeLivraison = new JLabel("Heure de livraison souhait\u00E9");
+		lblHeureDeLivraison.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
+		lblHeureDeLivraison.setBounds(10, 199, 198, 13);
+		frame.getContentPane().add(lblHeureDeLivraison);
 		
 		/* Variable de debug pour vérifier si la connexion a bien été établi */
 		boolean coReussi = false;
@@ -124,7 +130,7 @@ public class InterfaceConsulterCommande {
 		
 		//int idSelect = Integer.parseInt(scanner.nextLine());
 		
-		String sql = "select * from pizza";
+		String sql = "select idCommande from commande";
 		
 		
 		Statement statement = connection.createStatement();
@@ -154,14 +160,14 @@ public class InterfaceConsulterCommande {
 			}
 		});
 		btnNewButton.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnNewButton.setBounds(172, 286, 102, 33);
+		btnNewButton.setBounds(10, 5, 102, 33);
 		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnAfficher = new JButton("Afficher");
 		btnAfficher.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				try {
-					selectClient(comboBoxIdCommande.getSelectedItem().toString());
+					selectCommande(comboBoxIdCommande.getSelectedItem().toString());
 					
 				} catch (Exception z) {
 					throw new RuntimeException("Erreur detecte");
@@ -172,12 +178,17 @@ public class InterfaceConsulterCommande {
 		});
 	
 		btnAfficher.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnAfficher.setBounds(172, 236, 102, 33);
+		btnAfficher.setBounds(214, 163, 102, 33);
 		frame.getContentPane().add(btnAfficher);
-	}
-	public void selectClient(String idCommande) throws SQLException{
 		
-		String sql = "select * from commande c inner join pizza p on c.idPizza=p.idPizza inner join adresse a on c.idAdresse=a.idAdresse inner join client cl on c.idClient=cl.idClient where idCommande ="+idCommande;
+
+	}
+
+	
+	
+	public void selectCommande(String idCommande) throws SQLException{
+		
+		String sql = "select * from commande c inner join pizza p on c.idPizza=p.idPizza inner join adresse a on c.idAdresse=a.idAdresse inner join client cl on c.idClient=cl.idClient where idCommande ="+idCommande+"order by HeureArrive";
 		Statement statement = connection.createStatement();
 		
 		ResultSet result = statement.executeQuery(sql);
@@ -186,12 +197,10 @@ public class InterfaceConsulterCommande {
 			
 			
 			
-			String nomPizza = result.getString("nomPizza");
-			String taillePizza = result.getString("taillePizza");
-			String prixPizza = result.getString("prixPizza");
+			String nomPizza = result.getString("pizza.nomPizza");
+			String taillePizza = result.getString("pizza.taillePizza");
 			
 			textTaillePizza.setText(taillePizza);
-			textPrixPizza.setText(prixPizza);
 			textNomPizza.setText(nomPizza);
 			
 			// Debug
