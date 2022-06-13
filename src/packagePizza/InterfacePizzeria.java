@@ -6,13 +6,23 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.UIDefaults;
+import javax.swing.UIManager;
+import javax.swing.plaf.ColorUIResource;
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
+import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
+
 import java.awt.BorderLayout;
 import java.awt.Font;
 import javax.swing.JPasswordField;
+import java.awt.Color;
+import java.awt.Toolkit;
 
 public class InterfacePizzeria {
 
@@ -27,7 +37,10 @@ public class InterfacePizzeria {
 			public void run() {
 				try {
 					InterfacePizzeria window = new InterfacePizzeria();
+					UIManager.setLookAndFeel(new NimbusLookAndFeel());
 					window.frame.setVisible(true);
+					
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -40,6 +53,7 @@ public class InterfacePizzeria {
 	 */
 	public InterfacePizzeria() {
 		initialize();
+		
 
 	}
 
@@ -48,19 +62,27 @@ public class InterfacePizzeria {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getColorModel();
+		frame.setTitle("PizzBurg");
+		
+		frame.getContentPane().setBackground(new Color(246, 201, 84));
 		frame.setBounds(100, 100, 450, 308);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-			//connexionDB connection = new connexionDB(); connexion à la base de donnée
+		 //creation de l'icon
+		
+	
+			//connexionDB connection = new connexionDB(); connexion ï¿½ la base de donnï¿½e
 		
 		JLabel lblConnexion = new JLabel("      Connexion");
 		lblConnexion.setFont(new Font("Rockwell", Font.PLAIN, 30));
-		lblConnexion.setBounds(87, 0, 248, 72);
+		lblConnexion.setBounds(103, 11, 215, 39);
 		frame.getContentPane().add(lblConnexion);
 		
 		JLabel lblVoustes = new JLabel("    Vous \u00EAtes:");
+		lblVoustes.setToolTipText("");
 		lblVoustes.setFont(new Font("Rockwell", Font.PLAIN, 20));
-		lblVoustes.setBounds(149, 70, 129, 49);
+		lblVoustes.setBounds(0, 121, 129, 38);
 		frame.getContentPane().add(lblVoustes);
 		
 		JButton btnLivreur = new JButton("Livreur");
@@ -73,8 +95,8 @@ public class InterfacePizzeria {
 			
 			}
 		});
-		btnLivreur.setFont(new Font("Rockwell", Font.BOLD, 18));
-		btnLivreur.setBounds(10, 130, 120, 49);
+		btnLivreur.setFont(new Font("Dialog", Font.BOLD, 17));
+		btnLivreur.setBounds(153, 164, 145, 40);
 		frame.getContentPane().add(btnLivreur);
 		
 		JButton btnCuisinier = new JButton("Cuisinier");
@@ -85,8 +107,8 @@ public class InterfacePizzeria {
 				frame.dispose();
 			}
 		});
-		btnCuisinier.setFont(new Font("Rockwell", Font.BOLD, 18));
-		btnCuisinier.setBounds(304, 130, 120, 49);
+		btnCuisinier.setFont(new Font("Dialog", Font.BOLD, 17));
+		btnCuisinier.setBounds(153, 112, 145, 40);
 		frame.getContentPane().add(btnCuisinier);
 		
 		JButton btnGestionnaire = new JButton("Gestionnaire");
@@ -97,8 +119,8 @@ public class InterfacePizzeria {
 				frame.dispose();
 			}
 		});
-		btnGestionnaire.setFont(new Font("Rockwell", Font.BOLD, 18));
-		btnGestionnaire.setBounds(130, 180, 177, 49);
+		btnGestionnaire.setFont(new Font("Dialog", Font.BOLD, 17));
+		btnGestionnaire.setBounds(153, 61, 145, 40);
 		frame.getContentPane().add(btnGestionnaire);
 		
 		passwordField = new JPasswordField();
@@ -108,17 +130,6 @@ public class InterfacePizzeria {
 		JLabel lblNewLabel = new JLabel("fonctionnalit\u00E9 \u00E0 venir...");
 		lblNewLabel.setBounds(206, 244, 129, 14);
 		frame.getContentPane().add(lblNewLabel);
-		
-		JButton btnClose = new JButton("Fermer");
-		btnClose.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				frame.dispose();
-				
-			}
-		});
-		btnClose.setBounds(345, 0, 89, 23);
-		frame.getContentPane().add(btnClose);
 		
 
 	}

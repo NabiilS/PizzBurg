@@ -26,7 +26,7 @@ public class InterfaceLivreur {
 
 	public JFrame frame;
 	
-	// Ajouté pour la connexion
+	// Ajoutï¿½ pour la connexion
 	private static Connection connection = null;
 	private static Scanner scanner = new Scanner(System.in);
 	private JTextField textfieldLibAdresse;
@@ -78,7 +78,7 @@ public class InterfaceLivreur {
 		lblHeureLivraison.setVisible(false);
 		frame.getContentPane().add(lblHeureLivraison);
 		
-		/* Variable de debug pour vérifier si la connexion a bien été établi */
+		/* Variable de debug pour vï¿½rifier si la connexion a bien ï¿½tï¿½ ï¿½tabli */
 		boolean coReussi = false;
 		
 		// Connexion
@@ -109,7 +109,7 @@ public class InterfaceLivreur {
 			}
 		}
 		catch (Exception e) {
-			throw new RuntimeException("Erreur détecté");
+			throw new RuntimeException("Erreur dï¿½tectï¿½");
 		}
 		
 		JLabel lblAccueil = new JLabel("      Accueil");
@@ -124,7 +124,7 @@ public class InterfaceLivreur {
 		
 		JLabel lblListeDesCommandes = new JLabel("Liste des commandes");
 		lblListeDesCommandes.setFont(new Font("Rockwell", Font.PLAIN, 20));
-		lblListeDesCommandes.setBounds(107, 198, 292, 42);
+		lblListeDesCommandes.setBounds(127, 199, 222, 42);
 		frame.getContentPane().add(lblListeDesCommandes);
 		
 		JButton btnRetour = new JButton("Retour");
@@ -156,7 +156,7 @@ public class InterfaceLivreur {
 				}
 			}
 		});
-		comboBoxListCommande.setBounds(127, 250, 172, 22);
+		comboBoxListCommande.setBounds(127, 248, 172, 22);
 		frame.getContentPane().add(comboBoxListCommande);
 		
 		JLabel lblHeureDeLivraison = new JLabel("Heure de livraison souhait\u00E9:");
@@ -166,7 +166,7 @@ public class InterfaceLivreur {
 		
 		JLabel lblListeTelLivreur = new JLabel("T\u00E9l\u00E9phone du livreur");
 		lblListeTelLivreur.setFont(new Font("Rockwell", Font.PLAIN, 20));
-		lblListeTelLivreur.setBounds(111, 91, 263, 42);
+		lblListeTelLivreur.setBounds(125, 81, 263, 42);
 		frame.getContentPane().add(lblListeTelLivreur);
 		
 
@@ -176,7 +176,7 @@ public class InterfaceLivreur {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					
-					// Debug pour vérifier si le numéro de téléphone est bon
+					// Debug pour vï¿½rifier si le numï¿½ro de tï¿½lï¿½phone est bon
 					//System.out.print(selectLivreur(comboBoxTelephoneLivreur.getSelectedItem().toString()));
 					
 					comboBoxListCommande.removeAllItems();		
@@ -194,7 +194,7 @@ public class InterfaceLivreur {
 			}
 		});
 		btnLivreurValider.setFont(new Font("Rockwell", Font.PLAIN, 16));
-		btnLivreurValider.setBounds(153, 158, 100, 30);
+		btnLivreurValider.setBounds(166, 159, 100, 30);
 		frame.getContentPane().add(btnLivreurValider);
 		
 		JLabel lblAdresseDeLivraison = new JLabel("Adresse de livraison");
@@ -229,7 +229,7 @@ public class InterfaceLivreur {
 		
 		textfieldComplementAdresse = new JTextField();
 		textfieldComplementAdresse.setColumns(10);
-		textfieldComplementAdresse.setBounds(32, 423, 248, 19);
+		textfieldComplementAdresse.setBounds(7, 422, 248, 19);
 		frame.getContentPane().add(textfieldComplementAdresse);
 	}
 	public String getComplementAdresse(String idCommande) throws SQLException {
@@ -242,8 +242,8 @@ public class InterfaceLivreur {
 		if(result.next()) {
 			return result.getString("a.complementAdresse");
 		}
-		else System.out.println("Pas de données trouvés...");
-		return "Pas de donnée";
+		else System.out.println("Pas de donnï¿½es trouvï¿½s...");
+		return "Pas de donnï¿½e";
 	}
 	
 	
@@ -258,8 +258,8 @@ public class InterfaceLivreur {
 		if(result.next()) {
 			return result.getString("a.codePostale");
 		}
-		else System.out.println("Pas de données trouvés...");
-		return "Pas de donnée";
+		else System.out.println("Pas de donnï¿½es trouvï¿½s...");
+		return "Pas de donnï¿½e";
 	}
 	
 	public String getVille(String idCommande) throws SQLException {
@@ -272,8 +272,8 @@ public class InterfaceLivreur {
 		if(result.next()) {
 			return result.getString("a.ville");
 		}
-		else System.out.println("Pas de données trouvés...");
-		return "Pas de donnée";
+		else System.out.println("Pas de donnï¿½es trouvï¿½s...");
+		return "Pas de donnï¿½e";
 	}
 	
 	public String getLibAdresse(String idCommande) throws SQLException {
@@ -286,8 +286,8 @@ public class InterfaceLivreur {
 		if(result.next()) {
 			return result.getString("a.libAdresse");
 		}
-		else System.out.println("Pas de données trouvés...");
-		return "Pas de donnée";
+		else System.out.println("Pas de donnï¿½es trouvï¿½s...");
+		return "Pas de donnï¿½e";
 	}
 	
 	
@@ -301,8 +301,8 @@ public class InterfaceLivreur {
 		if(result.next()) {
 			return result.getString("cl.telClient");
 		}
-		else System.out.println("Pas de données trouvés...");
-		return "Pas de donnée";
+		else System.out.println("Pas de donnï¿½es trouvï¿½s...");
+		return "Pas de donnï¿½e";
 	}
 	
 	
@@ -316,8 +316,8 @@ public class InterfaceLivreur {
 		if(result.next()) {
 			return result.getString("HeureArrive");
 		}
-		else System.out.println("Pas de données trouvés...");
-		return "Pas de donnée";
+		else System.out.println("Pas de donnï¿½es trouvï¿½s...");
+		return "Pas de donnï¿½e";
 	}
 	
 	
@@ -347,7 +347,7 @@ public class InterfaceLivreur {
 			System.out.println("telClient: " +telClient); 
 			*/
 			
-		} else System.out.println("Pas de données trouvés...");
+		} else System.out.println("Pas de donnï¿½es trouvï¿½s...");
 		
 	}
 	
@@ -374,8 +374,8 @@ public class InterfaceLivreur {
 			System.out.println("telClient: " +telClient); 
 			*/
 			
-		} else System.out.println("Pas de données trouvés...");
-		return "Pas de donnée...";
+		} else System.out.println("Pas de donnï¿½es trouvï¿½s...");
+		return "Pas de donnï¿½e...";
 		
 	}
 }

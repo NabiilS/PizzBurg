@@ -6,6 +6,19 @@ import javax.swing.JFrame;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JToggleButton;
+import java.awt.Component;
+import javax.swing.Box;
+import javax.swing.JSlider;
+import javax.swing.JProgressBar;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import javax.swing.JRadioButtonMenuItem;
+import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JPopupMenu;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class InterfaceGestionnaire {
 
@@ -45,18 +58,6 @@ public class InterfaceGestionnaire {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JButton btnRetour = new JButton("Retour");
-		btnRetour.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				InterfacePizzeria newFenetrePizzeria = new InterfacePizzeria();
-				newFenetrePizzeria.frame.setVisible(true);
-				frame.dispose();
-				
-			}
-		});
-		btnRetour.setBounds(0, 0, 89, 23);
-		frame.getContentPane().add(btnRetour);
-		
 		JButton btnAddClient = new JButton("Ajouter des clients");
 		btnAddClient.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -65,7 +66,7 @@ public class InterfaceGestionnaire {
 			}
 			
 		});
-		btnAddClient.setBounds(31, 41, 157, 44);
+		btnAddClient.setBounds(59, 87, 157, 44);
 		frame.getContentPane().add(btnAddClient);
 		
 		btnAddCommande = new JButton("Ajouter des commandes");
@@ -76,7 +77,7 @@ public class InterfaceGestionnaire {
 				
 			}
 		});
-		btnAddCommande.setBounds(132, 329, 157, 44);
+		btnAddCommande.setBounds(143, 377, 157, 44);
 		frame.getContentPane().add(btnAddCommande);
 		
 		JButton btnAddPizza = new JButton("Ajouter des Pizzas");
@@ -86,11 +87,11 @@ public class InterfaceGestionnaire {
 				interfaceAjouterPizza.frame.setVisible(true);
 			}
 		});
-		btnAddPizza.setBounds(31, 95, 157, 44);
+		btnAddPizza.setBounds(59, 142, 157, 44);
 		frame.getContentPane().add(btnAddPizza);
 		
 		JButton btnModifIngredient = new JButton("Gestion des ingredients");
-		btnModifIngredient.setBounds(294, 526, 145, 32);
+		btnModifIngredient.setBounds(292, 498, 145, 32);
 		frame.getContentPane().add(btnModifIngredient);
 		
 		JButton btnAddIngredient = new JButton("Ajouter des ingr\u00E9dients");
@@ -100,7 +101,7 @@ public class InterfaceGestionnaire {
 				interfaceAjouterIngredient.frame.setVisible(true);
 			}
 		});
-		btnAddIngredient.setBounds(31, 149, 157, 44);
+		btnAddIngredient.setBounds(59, 202, 157, 44);
 		frame.getContentPane().add(btnAddIngredient);
 		
 		JButton btnDeleteClient = new JButton("Supprimer des clients");
@@ -110,7 +111,7 @@ public class InterfaceGestionnaire {
 				interfaceSupprimerClient.frame.setVisible(true);
 			}
 		});
-		btnDeleteClient.setBounds(230, 41, 157, 44);
+		btnDeleteClient.setBounds(235, 87, 157, 44);
 		frame.getContentPane().add(btnDeleteClient);
 		
 		JButton btnDeletePizza = new JButton("Supprimer des Pizzas");
@@ -120,7 +121,7 @@ public class InterfaceGestionnaire {
 				interfaceSupprimerPizza.frame.setVisible(true);
 			}
 		});
-		btnDeletePizza.setBounds(230, 96, 157, 44);
+		btnDeletePizza.setBounds(235, 142, 157, 44);
 		frame.getContentPane().add(btnDeletePizza);
 		
 		JButton btnSupprimerIngrdients = new JButton("Supprimer des ingr\u00E9dients");
@@ -130,7 +131,7 @@ public class InterfaceGestionnaire {
 				interfaceSupprimerIngredient.frame.setVisible(true);
 			}
 		});
-		btnSupprimerIngrdients.setBounds(230, 149, 157, 44);
+		btnSupprimerIngrdients.setBounds(235, 202, 157, 44);
 		frame.getContentPane().add(btnSupprimerIngrdients);
 		
 		JButton btnAjouterDesCuisiniers = new JButton("Ajouter des cuisiniers");
@@ -140,7 +141,7 @@ public class InterfaceGestionnaire {
 				interfaceAjoutCuisinier.frame.setVisible(true);
 			}
 		});
-		btnAjouterDesCuisiniers.setBounds(31, 203, 157, 44);
+		btnAjouterDesCuisiniers.setBounds(59, 257, 157, 44);
 		frame.getContentPane().add(btnAjouterDesCuisiniers);
 		
 		JButton btnAjouterDesLivreurs = new JButton("Ajouter des livreurs");
@@ -150,7 +151,7 @@ public class InterfaceGestionnaire {
 				interfaceAjoutLivreur.frame.setVisible(true);
 			}
 		});
-		btnAjouterDesLivreurs.setBounds(31, 257, 157, 44);
+		btnAjouterDesLivreurs.setBounds(59, 312, 157, 44);
 		frame.getContentPane().add(btnAjouterDesLivreurs);
 		
 		JButton btnSupprimerDesCuisiniers = new JButton("Supprimer des cuisiniers");
@@ -160,7 +161,7 @@ public class InterfaceGestionnaire {
 				interfaceSupprimerCuisinier.frame.setVisible(true);
 			}
 		});
-		btnSupprimerDesCuisiniers.setBounds(230, 203, 157, 44);
+		btnSupprimerDesCuisiniers.setBounds(235, 257, 157, 44);
 		frame.getContentPane().add(btnSupprimerDesCuisiniers);
 		
 		JButton btnSupprimerDesLivreurs = new JButton("Supprimer des livreurs");
@@ -170,7 +171,38 @@ public class InterfaceGestionnaire {
 				interfaceSupprimerLivreur.frame.setVisible(true);
 			}
 		});
-		btnSupprimerDesLivreurs.setBounds(230, 257, 157, 44);
+		btnSupprimerDesLivreurs.setBounds(235, 312, 157, 44);
 		frame.getContentPane().add(btnSupprimerDesLivreurs);
+		
+		JMenuBar menuBar = new JMenuBar();
+		frame.setJMenuBar(menuBar);
+		
+		JButton btnRetour = new JButton("Retour");
+		menuBar.add(btnRetour);
+		btnRetour.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				InterfacePizzeria newFenetrePizzeria = new InterfacePizzeria();
+				newFenetrePizzeria.frame.setVisible(true);
+				frame.dispose();
+				
+			}
+		});
+	}
+	private static void addPopup(Component component, final JPopupMenu popup) {
+		component.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			public void mouseReleased(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			private void showMenu(MouseEvent e) {
+				popup.show(e.getComponent(), e.getX(), e.getY());
+			}
+		});
 	}
 }

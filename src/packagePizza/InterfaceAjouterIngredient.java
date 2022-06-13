@@ -32,7 +32,7 @@ public class InterfaceAjouterIngredient {
 	private JTextField textNomPizza;
 	private JTextField textQuantiteIngredient;
 	
-	// Ajouté pour la connexion
+	// Ajoutï¿½ pour la connexion
 	private static Connection connection = null;
 	private static Scanner scanner = new Scanner(System.in);
 
@@ -73,35 +73,35 @@ public class InterfaceAjouterIngredient {
 		JLabel lblNomIngredient = new JLabel("Ingredient");
 		lblNomIngredient.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNomIngredient.setFont(new Font("The Next Font", Font.PLAIN, 20));
-		lblNomIngredient.setBounds(188, 33, 110, 21);
+		lblNomIngredient.setBounds(160, 43, 110, 21);
 		frame.getContentPane().add(lblNomIngredient);
 		
 		textNomPizza = new JTextField();
-		textNomPizza.setBounds(160, 63, 138, 19);
+		textNomPizza.setBounds(160, 77, 138, 19);
 		frame.getContentPane().add(textNomPizza);
 		textNomPizza.setColumns(10);
 		
 		JLabel lblQuantiteIngredient = new JLabel("Quantit\u00E9");
 		lblQuantiteIngredient.setFont(new Font("The Next Font", Font.PLAIN, 20));
-		lblQuantiteIngredient.setBounds(188, 105, 109, 21);
+		lblQuantiteIngredient.setBounds(160, 113, 98, 21);
 		frame.getContentPane().add(lblQuantiteIngredient);
 		
 		textQuantiteIngredient = new JTextField();
 		textQuantiteIngredient.addKeyListener(new KeyAdapter() {
-			/* Vérifie si le caractère de la quantité est bien un chiffre et sans espace
-			pour pouvoir correctement l'insérer dans la BDD */
+			/* Vï¿½rifie si le caractï¿½re de la quantitï¿½ est bien un chiffre et sans espace
+			pour pouvoir correctement l'insï¿½rer dans la BDD */
 			@Override
 			public void keyTyped(KeyEvent e) {
 				
 				char c=e.getKeyChar();
 				if (Character.isLetter(c)&&!e.isAltDown() || c == KeyEvent.VK_SPACE ) {
 					e.consume();
-					System.out.print("Le caractère n'est pas un chiffre\n");
+					System.out.print("Le caractï¿½re n'est pas un chiffre\n");
 				}
 			} 
 		});
 		textQuantiteIngredient.setColumns(10);
-		textQuantiteIngredient.setBounds(160, 125, 138, 19);
+		textQuantiteIngredient.setBounds(160, 154, 138, 19);
 		frame.getContentPane().add(textQuantiteIngredient);
 		
 		boolean coReussi = false;
@@ -138,7 +138,7 @@ public class InterfaceAjouterIngredient {
 					int rows = preparedStatement.executeUpdate();
 					
 					if(rows > 0) {
-						System.out.println("Insertion exécuté avec succès");
+						System.out.println("Insertion exï¿½cutï¿½ avec succï¿½s");
 					}
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
@@ -146,8 +146,8 @@ public class InterfaceAjouterIngredient {
 				}				
 			}
 		});
-		btnAjouter.setFont(new Font("Tahoma", Font.PLAIN, 21));
-		btnAjouter.setBounds(148, 155, 159, 39);
+		btnAjouter.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnAjouter.setBounds(126, 212, 103, 31);
 		frame.getContentPane().add(btnAjouter);
 		
 		JButton btnAnnuler = new JButton("Annuler");
@@ -158,19 +158,14 @@ public class InterfaceAjouterIngredient {
 				frame.dispose();
 			}
 		});
-		btnAnnuler.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		btnAnnuler.setBounds(148, 205, 159, 39);
+		btnAnnuler.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnAnnuler.setBounds(249, 212, 103, 31);
 		frame.getContentPane().add(btnAnnuler);
 		
-		JLabel lblStatutBDD = new JLabel("Statut de la BDD");
-		lblStatutBDD.setFont(new Font("The Next Font", Font.BOLD, 14));
-		lblStatutBDD.setBounds(20, 11, 130, 21);
-		frame.getContentPane().add(lblStatutBDD);
-		
-		JLabel labelBdd = new JLabel("Status");
+		JLabel labelBdd = new JLabel("");
 		labelBdd.setForeground(Color.GRAY);
 		labelBdd.setFont(new Font("Microsoft JhengHei UI", Font.BOLD, 13));
-		labelBdd.setBounds(30, 13, 187, 66);
+		labelBdd.setBounds(0, 0, 187, 66);
 		frame.getContentPane().add(labelBdd);
 		
 		JButton btnConsulterPizza = new JButton("Consulter");
@@ -181,16 +176,16 @@ public class InterfaceAjouterIngredient {
 				//frame.dispose();
 			}
 		});
-		btnConsulterPizza.setFont(new Font("Tahoma", Font.PLAIN, 21));
-		btnConsulterPizza.setBounds(160, 266, 123, 29);
+		btnConsulterPizza.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnConsulterPizza.setBounds(186, 254, 110, 31);
 		frame.getContentPane().add(btnConsulterPizza);
 		
 
 		if (coReussi = true) {
-			labelBdd.setText("Connexion réussi!");
+			labelBdd.setText("Connexion rï¿½ussi!");
 			labelBdd.setForeground(Color.GREEN);
 		} else {
-			labelBdd.setText("La connexion à echoué");
+			labelBdd.setText("La connexion ï¿½ echouï¿½");
 			labelBdd.setForeground(Color.RED);
 		}
 		

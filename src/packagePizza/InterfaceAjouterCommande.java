@@ -31,7 +31,7 @@ public class InterfaceAjouterCommande {
 	private JTextField textPrenomClient;
 	private JTextField textNomClient;
 	
-	// Ajouté pour la connexion
+	// Ajoutï¿½ pour la connexion
 	private static Connection connection = null;
 	private static Scanner scanner = new Scanner(System.in);
 	private JTextField texNomPizza;
@@ -142,7 +142,7 @@ public class InterfaceAjouterCommande {
 		lblHeureLivraison.setBounds(685, 364, 197, 13);
 		frame.getContentPane().add(lblHeureLivraison);
 		
-		/* Variable de debug pour vérifier si la connexion a bien été établi */
+		/* Variable de debug pour vï¿½rifier si la connexion a bien ï¿½tï¿½ ï¿½tabli */
 		boolean coReussi = false;
 		
 		// Connexion
@@ -195,7 +195,7 @@ public class InterfaceAjouterCommande {
 		}
 		
 		catch (Exception e) {
-			throw new RuntimeException("Erreur détecté");
+			throw new RuntimeException("Erreur dï¿½tectï¿½");
 		
 			
 		}
@@ -410,8 +410,8 @@ public class InterfaceAjouterCommande {
 			}
 		});
 		btnAjouterClient.setForeground(Color.BLACK);
-		btnAjouterClient.setFont(new Font("Malgun Gothic", Font.PLAIN, 13));
-		btnAjouterClient.setBounds(204, 275, 80, 30);
+		btnAjouterClient.setFont(new Font("Malgun Gothic", Font.PLAIN, 14));
+		btnAjouterClient.setBounds(198, 276, 102, 33);
 		frame.getContentPane().add(btnAjouterClient);
 		
 		textCodePostale = new JTextField();
@@ -485,7 +485,7 @@ public class InterfaceAjouterCommande {
 			int rows = preparedStatement.executeUpdate();
 			
 			if(rows > 0) {
-				System.out.println("Insertion exécuté avec succès");
+				System.out.println("Insertion exï¿½cutï¿½ avec succï¿½s");
 			}
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
@@ -508,7 +508,7 @@ public Integer AjouterAdresse() {
 		String sql = "insert into Adresse(libAdresse,ville,codePostale,complementAdresse) values (?,?,?,?)";
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS); //Statement.RETURN_GENERATED_KEYS pour récupérer l'id de l'insertion et le retourner
+			preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS); //Statement.RETURN_GENERATED_KEYS pour rï¿½cupï¿½rer l'id de l'insertion et le retourner
 			
 			preparedStatement.setString(1, libAdresse);
 			preparedStatement.setString(2, ville);
@@ -526,7 +526,7 @@ public Integer AjouterAdresse() {
 			
 			//return true;
 			if(rows > 0) {
-				System.out.println("Insertion exécuté avec succès = "+rows);
+				System.out.println("Insertion exï¿½cutï¿½ avec succï¿½s = "+rows);
 			}
 			return generatedKey;
 		} catch (SQLException e1) {
@@ -545,7 +545,7 @@ public Integer AjouterAdresse() {
 		int generatedKey = 0;
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
-			preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS); // Statement.RETURN_GENERATED_KEYS pour récupérer l'id de l'insertion et le retourner
+			preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS); // Statement.RETURN_GENERATED_KEYS pour rï¿½cupï¿½rer l'id de l'insertion et le retourner
 			
 			preparedStatement.setDate(1, date);
 			
@@ -561,7 +561,7 @@ public Integer AjouterAdresse() {
 			
 			//return true;
 			if(rows > 0) {
-				System.out.println("Insertion exécuté avec succès = "+rows);
+				System.out.println("Insertion exï¿½cutï¿½ avec succï¿½s = "+rows);
 			}
 			return generatedKey;
 		} catch (SQLException e1) {
@@ -600,7 +600,7 @@ public Integer AjouterAdresse() {
 			System.out.println("telClient: " +telClient); 
 			*/
 			
-		} else System.out.println("Pas de données trouvés pour la table client...");
+		} else System.out.println("Pas de donnï¿½es trouvï¿½s pour la table client...");
 	}
 		public void selectPizza(String idPizza) throws SQLException{
 		
@@ -627,7 +627,7 @@ public Integer AjouterAdresse() {
 				System.out.println("telClient: " +telClient); 
 				*/
 				
-			} else System.out.println("Pas de données trouvés...");
+			} else System.out.println("Pas de donnï¿½es trouvï¿½s...");
 	}
 		public void selectCuisinier(String nomCuisinier) throws SQLException{
 			

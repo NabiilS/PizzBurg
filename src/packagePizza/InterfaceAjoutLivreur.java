@@ -30,7 +30,7 @@ public class InterfaceAjoutLivreur {
 	private JTextField textPrenom;
 	private JTextField textTelephone;
 	
-	// Ajouté pour la connexion
+	// Ajoutï¿½ pour la connexion
 	private static Connection connection = null;
 	private static Scanner scanner = new Scanner(System.in);
 
@@ -70,7 +70,7 @@ public class InterfaceAjoutLivreur {
 		
 		JLabel lblNom = new JLabel("Nom");
 		lblNom.setFont(new Font("The Next Font", Font.PLAIN, 20));
-		lblNom.setBounds(209, 34, 89, 21);
+		lblNom.setBounds(160, 31, 89, 21);
 		frame.getContentPane().add(lblNom);
 		
 		textNom = new JTextField();
@@ -80,7 +80,7 @@ public class InterfaceAjoutLivreur {
 		
 		JLabel lblPrenom = new JLabel("Prenom");
 		lblPrenom.setFont(new Font("The Next Font", Font.PLAIN, 20));
-		lblPrenom.setBounds(191, 92, 89, 21);
+		lblPrenom.setBounds(160, 89, 89, 21);
 		frame.getContentPane().add(lblPrenom);
 		
 		textPrenom = new JTextField();
@@ -90,7 +90,7 @@ public class InterfaceAjoutLivreur {
 		
 		JLabel lblTelephone = new JLabel("Telephone");
 		lblTelephone.setFont(new Font("The Next Font", Font.PLAIN, 20));
-		lblTelephone.setBounds(171, 156, 109, 21);
+		lblTelephone.setBounds(160, 155, 109, 21);
 		frame.getContentPane().add(lblTelephone);
 		
 		textTelephone = new JTextField();
@@ -100,7 +100,7 @@ public class InterfaceAjoutLivreur {
 				char c=e.getKeyChar();
 				if (Character.isLetter(c)&&!e.isAltDown()) {
 					e.consume();
-					System.out.print("Le caractère n'est pas un chiffre\n");
+					System.out.print("Le caractï¿½re n'est pas un chiffre\n");
 				}
 			}
 		});
@@ -149,7 +149,7 @@ public class InterfaceAjoutLivreur {
 					int rows = preparedStatement.executeUpdate();
 					
 					if(rows > 0) {
-						System.out.println("Insertion exécuté avec succès");
+						System.out.println("Insertion exï¿½cutï¿½ avec succï¿½s");
 					}
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
@@ -160,8 +160,8 @@ public class InterfaceAjoutLivreur {
 				
 			}
 		});
-		btnAjouter.setFont(new Font("Tahoma", Font.PLAIN, 21));
-		btnAjouter.setBounds(148, 216, 159, 39);
+		btnAjouter.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnAjouter.setBounds(128, 212, 103, 31);
 		frame.getContentPane().add(btnAjouter);
 		
 		JButton btnAnnuler = new JButton("Annuler");
@@ -173,19 +173,14 @@ public class InterfaceAjoutLivreur {
 				frame.dispose();
 			}
 		});
-		btnAnnuler.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		btnAnnuler.setBounds(148, 262, 159, 39);
+		btnAnnuler.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnAnnuler.setBounds(241, 212, 103, 31);
 		frame.getContentPane().add(btnAnnuler);
-		
-		JLabel lblNewLabel = new JLabel("Statut de la BDD");
-		lblNewLabel.setFont(new Font("The Next Font", Font.BOLD, 14));
-		lblNewLabel.setBounds(20, 11, 130, 21);
-		frame.getContentPane().add(lblNewLabel);
 		
 		JLabel labelBdd = new JLabel("Status");
 		labelBdd.setForeground(Color.GRAY);
 		labelBdd.setFont(new Font("Microsoft JhengHei UI", Font.BOLD, 13));
-		labelBdd.setBounds(30, 13, 187, 66);
+		labelBdd.setBounds(10, 11, 60, 66);
 		frame.getContentPane().add(labelBdd);
 		
 		JButton btnConsulterClient = new JButton("Consulter");
@@ -196,14 +191,14 @@ public class InterfaceAjoutLivreur {
 				frame.dispose();
 			}
 		});
-		btnConsulterClient.setFont(new Font("Tahoma", Font.PLAIN, 21));
-		btnConsulterClient.setBounds(330, 249, 123, 29);
+		btnConsulterClient.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnConsulterClient.setBounds(179, 254, 120, 31);
 		frame.getContentPane().add(btnConsulterClient);
 		if (coReussi = true) {
-			labelBdd.setText("Connexion réussi!");
+			labelBdd.setText("Connexion rï¿½ussi!");
 			labelBdd.setForeground(Color.GREEN);
 		} else {
-			labelBdd.setText("La connexion à echoué");
+			labelBdd.setText("La connexion ï¿½ echouï¿½");
 			labelBdd.setForeground(Color.RED);
 		}
 		
