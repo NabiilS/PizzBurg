@@ -58,7 +58,7 @@ public class InterfaceCuisinier {
 		
 		JLabel lblAccueil = new JLabel("      Accueil");
 		lblAccueil.setFont(new Font("Rockwell", Font.PLAIN, 30));
-		lblAccueil.setBounds(99, 11, 248, 42);
+		lblAccueil.setBounds(106, 11, 248, 42);
 		frame.getContentPane().add(lblAccueil);
 		
 		JButton btnIngrdients = new JButton("Ingr\u00E9dients");
@@ -68,7 +68,7 @@ public class InterfaceCuisinier {
 		
 		JLabel lblCuisinier = new JLabel("      Cuisinier");
 		lblCuisinier.setFont(new Font("Rockwell", Font.PLAIN, 24));
-		lblCuisinier.setBounds(119, 38, 184, 42);
+		lblCuisinier.setBounds(116, 45, 184, 42);
 		frame.getContentPane().add(lblCuisinier);
 		
 		JButton btnPizza = new JButton("Pizza");
@@ -80,6 +80,7 @@ public class InterfaceCuisinier {
 		btnIngrdients_1_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				InterfaceCommande newFenetreCommande = new InterfaceCommande();
+				newFenetreCommande.frame.setVisible(true);
 				frame.dispose();
 				
 				
