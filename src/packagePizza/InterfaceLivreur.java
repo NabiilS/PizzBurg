@@ -1,5 +1,6 @@
 package packagePizza;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -21,6 +22,7 @@ import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
 import javax.swing.JTextField;
+import java.awt.Toolkit;
 
 public class InterfaceLivreur {
 
@@ -64,6 +66,8 @@ public class InterfaceLivreur {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(InterfaceLivreur.class.getResource("/packagePizza/PizzBurg_logo.ico")));
+		frame.getContentPane().setBackground(new Color(246, 201, 84));
 		frame.setBounds(100, 100, 432, 659);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);

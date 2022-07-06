@@ -29,7 +29,7 @@ public class InterfaceAjoutPizza {
 	private JTextField textNomPizza;
 	private JTextField textPrix;
 	
-	// Ajouté pour la connexion
+	// Ajoutï¿½ pour la connexion
 	private static Connection connection = null;
 	private static Scanner scanner = new Scanner(System.in);
 
@@ -73,7 +73,7 @@ public class InterfaceAjoutPizza {
 		frame.getContentPane().add(lblnomPizza);
 		
 		textNomPizza = new JTextField();
-		textNomPizza.setBounds(160, 63, 138, 19);
+		textNomPizza.setBounds(161, 63, 138, 19);
 		frame.getContentPane().add(textNomPizza);
 		textNomPizza.setColumns(10);
 		
@@ -139,7 +139,7 @@ public class InterfaceAjoutPizza {
 					int rows = preparedStatement.executeUpdate();
 					
 					if(rows > 0) {
-						System.out.println("Insertion exécuté avec succès");
+						System.out.println("Insertion exï¿½cutï¿½ avec succï¿½s");
 					}
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
@@ -192,10 +192,10 @@ public class InterfaceAjoutPizza {
 		
 
 		if (coReussi = true) {
-			labelBdd.setText("Connexion réussi!");
+			labelBdd.setText("Connexion rï¿½ussi!");
 			labelBdd.setForeground(Color.GREEN);
 		} else {
-			labelBdd.setText("La connexion à echoué");
+			labelBdd.setText("La connexion ï¿½ echouï¿½");
 			labelBdd.setForeground(Color.RED);
 		}
 		

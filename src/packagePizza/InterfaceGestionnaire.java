@@ -7,6 +7,8 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JToggleButton;
+
+import java.awt.Color;
 import java.awt.Component;
 import javax.swing.Box;
 import javax.swing.JSlider;
@@ -54,6 +56,7 @@ public class InterfaceGestionnaire {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(246, 201, 84));
 		frame.setBounds(100, 100, 463, 605);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);

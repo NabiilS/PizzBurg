@@ -60,7 +60,10 @@ public class AfficherCommandeCuisinier {
 		Button button = new Button("retour");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				InterfaceCommande newFenetrePizzeria = new InterfaceCommande();
+				newFenetrePizzeria.frame.setVisible(true);
 				frame.dispose();
+			
 			}
 		});
 		button.setBounds(219, 213, 104, 22);
