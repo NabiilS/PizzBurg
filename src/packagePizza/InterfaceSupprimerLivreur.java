@@ -75,7 +75,7 @@ public class InterfaceSupprimerLivreur {
 		frame.getContentPane().add(comboBoxTelClient);
 		
 		textNomClient = new JTextField();
-		textNomClient.setBounds(131, 155, 180, 19);
+		textNomClient.setBounds(131, 155, 180, 26);
 		frame.getContentPane().add(textNomClient);
 		textNomClient.setColumns(10);
 		
@@ -86,7 +86,7 @@ public class InterfaceSupprimerLivreur {
 		
 		textPrenomClient = new JTextField();
 		textPrenomClient.setColumns(10);
-		textPrenomClient.setBounds(131, 207, 180, 19);
+		textPrenomClient.setBounds(131, 207, 180, 26);
 		frame.getContentPane().add(textPrenomClient);
 		
 		JLabel lblPrenom = new JLabel("Prenom");
@@ -96,7 +96,7 @@ public class InterfaceSupprimerLivreur {
 		
 		textIdClient = new JTextField();
 		textIdClient.setColumns(10);
-		textIdClient.setBounds(131, 103, 180, 19);
+		textIdClient.setBounds(131, 103, 180, 26);
 		frame.getContentPane().add(textIdClient);
 		
 		JLabel lblId = new JLabel("Identifiant");
@@ -125,7 +125,7 @@ public class InterfaceSupprimerLivreur {
 		});
 		btnSupprimer.setEnabled(false);
 		btnSupprimer.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnSupprimer.setBounds(165, 279, 122, 33);
+		btnSupprimer.setBounds(167, 278, 122, 33);
 		frame.getContentPane().add(btnSupprimer);
 		
 		/* Variable de debug pour v�rifier si la connexion a bien �t� �tabli */

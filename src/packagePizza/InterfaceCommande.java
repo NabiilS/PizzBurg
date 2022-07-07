@@ -93,18 +93,18 @@ public class InterfaceCommande {
 				frame.dispose();
 			}
 		});
-		button.setBounds(320, 229, 104, 22);
+		button.setBounds(320, 229, 104, 26);
 		frame.getContentPane().add(button);
 		
 		textField = new JTextField();
 		textField.setColumns(10);
-		textField.setBounds(84, 120, 172, 22);
+		textField.setBounds(84, 120, 172, 26);
 		frame.getContentPane().add(textField);
 		textField.setEditable(false);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(84, 185, 172, 22);
+		textField_1.setBounds(84, 185, 172, 26);
 		frame.getContentPane().add(textField_1);
 		
 		boolean coReussi = false;

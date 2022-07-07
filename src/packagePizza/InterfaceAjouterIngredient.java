@@ -78,13 +78,13 @@ public class InterfaceAjouterIngredient {
 		frame.getContentPane().add(lblNomIngredient);
 		
 		textNomPizza = new JTextField();
-		textNomPizza.setBounds(160, 77, 138, 19);
+		textNomPizza.setBounds(160, 77, 138, 26);
 		frame.getContentPane().add(textNomPizza);
 		textNomPizza.setColumns(10);
 		
 		JLabel lblQuantiteIngredient = new JLabel("Quantit\u00E9");
 		lblQuantiteIngredient.setFont(new Font("The Next Font", Font.PLAIN, 20));
-		lblQuantiteIngredient.setBounds(160, 113, 98, 21);
+		lblQuantiteIngredient.setBounds(160, 122, 98, 21);
 		frame.getContentPane().add(lblQuantiteIngredient);
 		
 		textQuantiteIngredient = new JTextField();
@@ -102,7 +102,7 @@ public class InterfaceAjouterIngredient {
 			} 
 		});
 		textQuantiteIngredient.setColumns(10);
-		textQuantiteIngredient.setBounds(160, 154, 138, 19);
+		textQuantiteIngredient.setBounds(160, 154, 138, 26);
 		frame.getContentPane().add(textQuantiteIngredient);
 		
 		boolean coReussi = false;

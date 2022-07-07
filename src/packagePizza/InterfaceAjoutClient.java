@@ -77,7 +77,7 @@ public class InterfaceAjoutClient {
 		frame.getContentPane().add(lblNom);
 		
 		textNom = new JTextField();
-		textNom.setBounds(160, 54, 138, 19);
+		textNom.setBounds(160, 54, 138, 26);
 		frame.getContentPane().add(textNom);
 		textNom.setColumns(10);
 		
@@ -88,7 +88,7 @@ public class InterfaceAjoutClient {
 		
 		textPrenom = new JTextField();
 		textPrenom.setColumns(10);
-		textPrenom.setBounds(160, 121, 138, 19);
+		textPrenom.setBounds(160, 121, 138, 26);
 		frame.getContentPane().add(textPrenom);
 		
 		JLabel lblTelephone = new JLabel("Telephone");
@@ -108,7 +108,7 @@ public class InterfaceAjoutClient {
 			}
 		});
 		textTelephone.setColumns(10);
-		textTelephone.setBounds(160, 183, 138, 19);
+		textTelephone.setBounds(160, 183, 138, 26);
 		frame.getContentPane().add(textTelephone);
 		boolean coReussi = false;
 		try {

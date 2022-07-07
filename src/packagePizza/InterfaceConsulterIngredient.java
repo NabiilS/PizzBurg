@@ -73,7 +73,7 @@ public class InterfaceConsulterIngredient {
 		frame.getContentPane().add(comboBoxNomIngredient);
 		
 		textIdIngredient = new JTextField();
-		textIdIngredient.setBounds(131, 124, 180, 19);
+		textIdIngredient.setBounds(131, 124, 180, 26);
 		frame.getContentPane().add(textIdIngredient);
 		textIdIngredient.setColumns(10);
 		
@@ -84,7 +84,7 @@ public class InterfaceConsulterIngredient {
 		
 		textQuantite = new JTextField();
 		textQuantite.setColumns(10);
-		textQuantite.setBounds(131, 178, 180, 19);
+		textQuantite.setBounds(131, 178, 180, 26);
 		frame.getContentPane().add(textQuantite);
 		
 		JLabel lblNomIngredient = new JLabel("Ingredient");

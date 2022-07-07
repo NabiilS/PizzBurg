@@ -74,7 +74,7 @@ public class InterfaceConsulterLivreur {
 		frame.getContentPane().add(comboBoxNomCuisinier);
 		
 		textTelCuisinier = new JTextField();
-		textTelCuisinier.setBounds(131, 155, 180, 19);
+		textTelCuisinier.setBounds(131, 155, 180, 26);
 		frame.getContentPane().add(textTelCuisinier);
 		textTelCuisinier.setColumns(10);
 		
@@ -85,7 +85,7 @@ public class InterfaceConsulterLivreur {
 		
 		textPrenom = new JTextField();
 		textPrenom.setColumns(10);
-		textPrenom.setBounds(131, 207, 180, 19);
+		textPrenom.setBounds(131, 207, 180, 26);
 		frame.getContentPane().add(textPrenom);
 		
 		JLabel lblPrenom = new JLabel("Prenom");
@@ -95,7 +95,7 @@ public class InterfaceConsulterLivreur {
 		
 		textId = new JTextField();
 		textId.setColumns(10);
-		textId.setBounds(131, 103, 180, 19);
+		textId.setBounds(131, 103, 180, 26);
 		frame.getContentPane().add(textId);
 		
 		JLabel lblId = new JLabel("Identifiant");

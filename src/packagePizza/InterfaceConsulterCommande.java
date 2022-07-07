@@ -74,7 +74,7 @@ public class InterfaceConsulterCommande {
 		frame.getContentPane().add(comboBoxIdCommande);
 		
 		textTaillePizza = new JTextField();
-		textTaillePizza.setBounds(131, 155, 180, 19);
+		textTaillePizza.setBounds(131, 155, 180, 26);
 		frame.getContentPane().add(textTaillePizza);
 		textTaillePizza.setColumns(10);
 		
@@ -85,7 +85,7 @@ public class InterfaceConsulterCommande {
 		
 		textPrixPizza = new JTextField();
 		textPrixPizza.setColumns(10);
-		textPrixPizza.setBounds(131, 207, 180, 19);
+		textPrixPizza.setBounds(131, 207, 180, 26);
 		frame.getContentPane().add(textPrixPizza);
 		
 		JLabel lblPrix = new JLabel("Prix");
@@ -95,7 +95,7 @@ public class InterfaceConsulterCommande {
 		
 		textNomPizza = new JTextField();
 		textNomPizza.setColumns(10);
-		textNomPizza.setBounds(131, 103, 180, 19);
+		textNomPizza.setBounds(131, 103, 180, 26);
 		frame.getContentPane().add(textNomPizza);
 		
 		JLabel lblId = new JLabel("Identifiant");

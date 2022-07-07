@@ -207,13 +207,13 @@ public class InterfaceLivreur {
 		frame.getContentPane().add(lblAdresseDeLivraison);
 		
 		textfieldLibAdresse = new JTextField();
-		textfieldLibAdresse.setBounds(7, 394, 180, 19);
+		textfieldLibAdresse.setBounds(7, 394, 180, 26);
 		frame.getContentPane().add(textfieldLibAdresse);
 		textfieldLibAdresse.setColumns(10);
 		
 		textfieldTelephoneClient = new JTextField();
 		textfieldTelephoneClient.setColumns(10);
-		textfieldTelephoneClient.setBounds(87, 495, 267, 19);
+		textfieldTelephoneClient.setBounds(87, 495, 267, 26);
 		frame.getContentPane().add(textfieldTelephoneClient);
 		
 		JLabel lblTlphoneDuClient = new JLabel("T\u00E9l\u00E9phone du client");
@@ -223,17 +223,17 @@ public class InterfaceLivreur {
 		
 		textfieldVille = new JTextField();
 		textfieldVille.setColumns(10);
-		textfieldVille.setBounds(197, 394, 115, 19);
+		textfieldVille.setBounds(197, 394, 115, 26);
 		frame.getContentPane().add(textfieldVille);
 		
 		textfieldCodePostale = new JTextField();
 		textfieldCodePostale.setColumns(10);
-		textfieldCodePostale.setBounds(322, 394, 83, 19);
+		textfieldCodePostale.setBounds(322, 394, 90, 26);
 		frame.getContentPane().add(textfieldCodePostale);
 		
 		textfieldComplementAdresse = new JTextField();
 		textfieldComplementAdresse.setColumns(10);
-		textfieldComplementAdresse.setBounds(7, 422, 248, 19);
+		textfieldComplementAdresse.setBounds(7, 431, 248, 26);
 		frame.getContentPane().add(textfieldComplementAdresse);
 	}
 	public String getComplementAdresse(String idCommande) throws SQLException {

@@ -69,7 +69,7 @@ public class InterfaceSupprimerPizza {
 		frame.getContentPane().add(comboBoxidPizza);
 		
 		textTaillePizza = new JTextField();
-		textTaillePizza.setBounds(131, 155, 180, 19);
+		textTaillePizza.setBounds(131, 155, 180, 26);
 		frame.getContentPane().add(textTaillePizza);
 		textTaillePizza.setColumns(10);
 		
@@ -80,7 +80,7 @@ public class InterfaceSupprimerPizza {
 		
 		textPrixPizza = new JTextField();
 		textPrixPizza.setColumns(10);
-		textPrixPizza.setBounds(131, 207, 180, 19);
+		textPrixPizza.setBounds(131, 207, 180, 26);
 		frame.getContentPane().add(textPrixPizza);
 		
 		JLabel lblPrix = new JLabel("Prix");
@@ -90,7 +90,7 @@ public class InterfaceSupprimerPizza {
 		
 		textNomPizza = new JTextField();
 		textNomPizza.setColumns(10);
-		textNomPizza.setBounds(131, 103, 180, 19);
+		textNomPizza.setBounds(131, 103, 180, 26);
 		frame.getContentPane().add(textNomPizza);
 		
 		JLabel lblId = new JLabel("Identifiant");
@@ -163,7 +163,7 @@ public class InterfaceSupprimerPizza {
 		});
 		btnSupprimer.setFont(new Font("Rockwell", Font.PLAIN, 14));
 		btnSupprimer.setEnabled(false);
-		btnSupprimer.setBounds(158, 276, 122, 33);
+		btnSupprimer.setBounds(164, 273, 122, 33);
 		frame.getContentPane().add(btnSupprimer);
 		
 		btnNewButton.setFont(new Font("Rockwell", Font.PLAIN, 14));

@@ -97,7 +97,7 @@ public class InterfaceAjouterCommande {
 		frame.getContentPane().add(comboBoxPizza);
 		
 		textidClient = new JTextField();
-		textidClient.setBounds(155, 105, 180, 19);
+		textidClient.setBounds(155, 105, 180, 26);
 		frame.getContentPane().add(textidClient);
 		textidClient.setColumns(10);
 		
@@ -108,7 +108,7 @@ public class InterfaceAjouterCommande {
 		
 		textPrenomClient = new JTextField();
 		textPrenomClient.setColumns(10);
-		textPrenomClient.setBounds(155, 157, 180, 19);
+		textPrenomClient.setBounds(155, 157, 180, 26);
 		frame.getContentPane().add(textPrenomClient);
 		
 		JLabel lblPrenomClient = new JLabel("Prenom");
@@ -118,7 +118,7 @@ public class InterfaceAjouterCommande {
 		
 		textNomClient = new JTextField();
 		textNomClient.setColumns(10);
-		textNomClient.setBounds(155, 211, 180, 19);
+		textNomClient.setBounds(155, 211, 180, 26);
 		frame.getContentPane().add(textNomClient);
 		
 		JLabel lblTelClient = new JLabel("Client");
@@ -226,22 +226,22 @@ public class InterfaceAjouterCommande {
 		
 		JLabel lblnomPizza = new JLabel("Nom");
 		lblnomPizza.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblnomPizza.setBounds(410, 82, 77, 13);
+		lblnomPizza.setBounds(345, 82, 77, 13);
 		frame.getContentPane().add(lblnomPizza);
 		
 		texNomPizza = new JTextField();
 		texNomPizza.setColumns(10);
-		texNomPizza.setBounds(345, 105, 180, 19);
+		texNomPizza.setBounds(345, 105, 180, 26);
 		frame.getContentPane().add(texNomPizza);
 		
 		JLabel lblTaillePizza = new JLabel("Taille");
 		lblTaillePizza.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblTaillePizza.setBounds(410, 134, 77, 13);
+		lblTaillePizza.setBounds(345, 134, 77, 13);
 		frame.getContentPane().add(lblTaillePizza);
 		
 		textTaillePizza = new JTextField();
 		textTaillePizza.setColumns(10);
-		textTaillePizza.setBounds(345, 157, 180, 19);
+		textTaillePizza.setBounds(345, 157, 180, 26);
 		frame.getContentPane().add(textTaillePizza);
 		
 		JLabel lblPrixPizza = new JLabel("Prix");
@@ -251,7 +251,7 @@ public class InterfaceAjouterCommande {
 		
 		textPrixPizza = new JTextField();
 		textPrixPizza.setColumns(10);
-		textPrixPizza.setBounds(345, 211, 180, 19);
+		textPrixPizza.setBounds(345, 211, 180, 26);
 		frame.getContentPane().add(textPrixPizza);
 		
 		JButton btnAfficher_1 = new JButton("Afficher");
@@ -290,32 +290,32 @@ public class InterfaceAjouterCommande {
 		
 		textIdCuisinier = new JTextField();
 		textIdCuisinier.setColumns(10);
-		textIdCuisinier.setBounds(535, 105, 180, 19);
+		textIdCuisinier.setBounds(535, 105, 180, 26);
 		frame.getContentPane().add(textIdCuisinier);
 		
 		JLabel lblid_1_1 = new JLabel("Identifiant");
 		lblid_1_1.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblid_1_1.setBounds(580, 82, 77, 13);
+		lblid_1_1.setBounds(535, 82, 77, 13);
 		frame.getContentPane().add(lblid_1_1);
 		
 		textPrenomCuisinier = new JTextField();
 		textPrenomCuisinier.setColumns(10);
-		textPrenomCuisinier.setBounds(535, 157, 180, 19);
+		textPrenomCuisinier.setBounds(535, 157, 180, 26);
 		frame.getContentPane().add(textPrenomCuisinier);
 		
 		JLabel lblPrenomCuisinier = new JLabel("Prenom");
 		lblPrenomCuisinier.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblPrenomCuisinier.setBounds(580, 134, 77, 13);
+		lblPrenomCuisinier.setBounds(535, 134, 77, 13);
 		frame.getContentPane().add(lblPrenomCuisinier);
 		
 		textTelCuisinier = new JTextField();
 		textTelCuisinier.setColumns(10);
-		textTelCuisinier.setBounds(535, 211, 180, 19);
+		textTelCuisinier.setBounds(535, 211, 180, 26);
 		frame.getContentPane().add(textTelCuisinier);
 		
 		JLabel lblTelCuisinier = new JLabel("T\u00E9l\u00E9phone");
 		lblTelCuisinier.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblTelCuisinier.setBounds(545, 188, 102, 13);
+		lblTelCuisinier.setBounds(535, 188, 102, 13);
 		frame.getContentPane().add(lblTelCuisinier);
 		
 		JButton btnAfficher_1_1 = new JButton("Afficher");
@@ -342,32 +342,32 @@ public class InterfaceAjouterCommande {
 		
 		JLabel lblid_1_1_1 = new JLabel("Identifiant");
 		lblid_1_1_1.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblid_1_1_1.setBounds(781, 82, 77, 13);
+		lblid_1_1_1.setBounds(725, 82, 77, 13);
 		frame.getContentPane().add(lblid_1_1_1);
 		
 		textIdLivreur = new JTextField();
 		textIdLivreur.setColumns(10);
-		textIdLivreur.setBounds(725, 105, 180, 19);
+		textIdLivreur.setBounds(725, 105, 180, 26);
 		frame.getContentPane().add(textIdLivreur);
 		
 		JLabel lblPrenomLivreur = new JLabel("Livreur");
 		lblPrenomLivreur.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblPrenomLivreur.setBounds(781, 134, 77, 13);
+		lblPrenomLivreur.setBounds(725, 134, 77, 13);
 		frame.getContentPane().add(lblPrenomLivreur);
 		
 		textPrenomLivreur = new JTextField();
 		textPrenomLivreur.setColumns(10);
-		textPrenomLivreur.setBounds(725, 157, 180, 19);
+		textPrenomLivreur.setBounds(725, 157, 180, 26);
 		frame.getContentPane().add(textPrenomLivreur);
 		
 		JLabel lblTelLivreur = new JLabel("T\u00E9l\u00E9phone");
 		lblTelLivreur.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblTelLivreur.setBounds(756, 186, 102, 13);
+		lblTelLivreur.setBounds(725, 188, 102, 13);
 		frame.getContentPane().add(lblTelLivreur);
 		
 		textTelLivreur = new JTextField();
 		textTelLivreur.setColumns(10);
-		textTelLivreur.setBounds(725, 211, 180, 19);
+		textTelLivreur.setBounds(725, 211, 180, 26);
 		frame.getContentPane().add(textTelLivreur);
 		
 		JButton btnAfficher_1_1_1 = new JButton("Afficher");
@@ -387,12 +387,12 @@ public class InterfaceAjouterCommande {
 		
 		textHeureLivraison = new JTextField();
 		textHeureLivraison.setColumns(10);
-		textHeureLivraison.setBounds(705, 388, 200, 19);
+		textHeureLivraison.setBounds(705, 388, 200, 26);
 		frame.getContentPane().add(textHeureLivraison);
 		
 		textCodePostale = new JTextField();
 		textCodePostale.setColumns(10);
-		textCodePostale.setBounds(155, 465, 180, 19);
+		textCodePostale.setBounds(155, 465, 180, 26);
 		frame.getContentPane().add(textCodePostale);
 		
 		JLabel lblCodePostale = new JLabel("Code Postale");
@@ -402,7 +402,7 @@ public class InterfaceAjouterCommande {
 		
 		textVille = new JTextField();
 		textVille.setColumns(10);
-		textVille.setBounds(155, 407, 180, 19);
+		textVille.setBounds(155, 407, 180, 26);
 		frame.getContentPane().add(textVille);
 		
 		JLabel lblVille = new JLabel("Ville");
@@ -412,7 +412,7 @@ public class InterfaceAjouterCommande {
 		
 		textLibAdresse = new JTextField();
 		textLibAdresse.setColumns(10);
-		textLibAdresse.setBounds(155, 362, 180, 19);
+		textLibAdresse.setBounds(155, 362, 180, 26);
 		frame.getContentPane().add(textLibAdresse);
 		
 		JLabel lblAdresse = new JLabel("Adresse");
@@ -422,7 +422,7 @@ public class InterfaceAjouterCommande {
 		
 		textComplementAdresse = new JTextField();
 		textComplementAdresse.setColumns(10);
-		textComplementAdresse.setBounds(155, 519, 180, 19);
+		textComplementAdresse.setBounds(155, 519, 180, 26);
 		frame.getContentPane().add(textComplementAdresse);
 		
 		JLabel lblComplementAdresse = new JLabel("Compl\u00E9ment d'adresse");

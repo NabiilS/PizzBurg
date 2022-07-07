@@ -75,7 +75,7 @@ public class InterfaceAjoutLivreur {
 		frame.getContentPane().add(lblNom);
 		
 		textNom = new JTextField();
-		textNom.setBounds(160, 63, 138, 19);
+		textNom.setBounds(160, 63, 138, 26);
 		frame.getContentPane().add(textNom);
 		textNom.setColumns(10);
 		
@@ -86,12 +86,12 @@ public class InterfaceAjoutLivreur {
 		
 		textPrenom = new JTextField();
 		textPrenom.setColumns(10);
-		textPrenom.setBounds(160, 121, 138, 19);
+		textPrenom.setBounds(160, 121, 138, 26);
 		frame.getContentPane().add(textPrenom);
 		
 		JLabel lblTelephone = new JLabel("Telephone");
 		lblTelephone.setFont(new Font("The Next Font", Font.PLAIN, 20));
-		lblTelephone.setBounds(160, 155, 109, 21);
+		lblTelephone.setBounds(160, 151, 109, 21);
 		frame.getContentPane().add(lblTelephone);
 		
 		textTelephone = new JTextField();
@@ -106,7 +106,7 @@ public class InterfaceAjoutLivreur {
 			}
 		});
 		textTelephone.setColumns(10);
-		textTelephone.setBounds(160, 187, 138, 19);
+		textTelephone.setBounds(160, 182, 138, 26);
 		frame.getContentPane().add(textTelephone);
 		boolean coReussi = false;
 		try {

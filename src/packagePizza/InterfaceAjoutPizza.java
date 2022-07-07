@@ -70,27 +70,27 @@ public class InterfaceAjoutPizza {
 		
 		JLabel lblnomPizza = new JLabel("Pizza");
 		lblnomPizza.setFont(new Font("The Next Font", Font.PLAIN, 20));
-		lblnomPizza.setBounds(209, 33, 89, 21);
+		lblnomPizza.setBounds(161, 31, 89, 21);
 		frame.getContentPane().add(lblnomPizza);
 		
 		textNomPizza = new JTextField();
-		textNomPizza.setBounds(161, 63, 138, 19);
+		textNomPizza.setBounds(161, 62, 138, 26);
 		frame.getContentPane().add(textNomPizza);
 		textNomPizza.setColumns(10);
 		
 		JLabel lblTaillePizza = new JLabel("Taille");
 		lblTaillePizza.setFont(new Font("The Next Font", Font.PLAIN, 20));
-		lblTaillePizza.setBounds(205, 93, 46, 21);
+		lblTaillePizza.setBounds(161, 92, 46, 21);
 		frame.getContentPane().add(lblTaillePizza);
 		
 		JLabel lblPrix = new JLabel("Prix");
 		lblPrix.setFont(new Font("The Next Font", Font.PLAIN, 20));
-		lblPrix.setBounds(210, 156, 109, 21);
+		lblPrix.setBounds(161, 156, 109, 21);
 		frame.getContentPane().add(lblPrix);
 		
 		textPrix = new JTextField();
 		textPrix.setColumns(10);
-		textPrix.setBounds(160, 187, 138, 19);
+		textPrix.setBounds(161, 179, 138, 26);
 		frame.getContentPane().add(textPrix);
 		
 		final JComboBox comboBoxTaillePizza = new JComboBox();
@@ -151,8 +151,8 @@ public class InterfaceAjoutPizza {
 				
 			}
 		});
-		btnAjouter.setFont(new Font("Tahoma", Font.PLAIN, 21));
-		btnAjouter.setBounds(148, 216, 159, 39);
+		btnAjouter.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnAjouter.setBounds(135, 216, 103, 31);
 		frame.getContentPane().add(btnAjouter);
 		
 		JButton btnAnnuler = new JButton("Annuler");
@@ -164,8 +164,8 @@ public class InterfaceAjoutPizza {
 				frame.dispose();
 			}
 		});
-		btnAnnuler.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		btnAnnuler.setBounds(148, 262, 159, 39);
+		btnAnnuler.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnAnnuler.setBounds(248, 216, 103, 31);
 		frame.getContentPane().add(btnAnnuler);
 		
 		JLabel lblStatutBDD = new JLabel("Statut de la BDD");
@@ -187,8 +187,8 @@ public class InterfaceAjoutPizza {
 				frame.dispose();
 			}
 		});
-		btnConsulterPizza.setFont(new Font("Tahoma", Font.PLAIN, 21));
-		btnConsulterPizza.setBounds(330, 249, 123, 29);
+		btnConsulterPizza.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnConsulterPizza.setBounds(188, 258, 120, 31);
 		frame.getContentPane().add(btnConsulterPizza);
 		
 

@@ -74,7 +74,7 @@ public class InterfaceConsulterClient {
 		frame.getContentPane().add(comboBoxTelClient);
 		
 		textNomClient = new JTextField();
-		textNomClient.setBounds(131, 155, 180, 19);
+		textNomClient.setBounds(131, 155, 180, 26);
 		frame.getContentPane().add(textNomClient);
 		textNomClient.setColumns(10);
 		
@@ -85,7 +85,7 @@ public class InterfaceConsulterClient {
 		
 		textPrenomClient = new JTextField();
 		textPrenomClient.setColumns(10);
-		textPrenomClient.setBounds(131, 207, 180, 19);
+		textPrenomClient.setBounds(131, 207, 180, 26);
 		frame.getContentPane().add(textPrenomClient);
 		
 		JLabel lblPrenom = new JLabel("Prenom");
@@ -95,7 +95,7 @@ public class InterfaceConsulterClient {
 		
 		textIdClient = new JTextField();
 		textIdClient.setColumns(10);
-		textIdClient.setBounds(131, 103, 180, 19);
+		textIdClient.setBounds(131, 103, 180, 26);
 		frame.getContentPane().add(textIdClient);
 		
 		JLabel lblId = new JLabel("Identifiant");

@@ -68,7 +68,7 @@ public class InterfaceSupprimerIngredient {
 		frame.getContentPane().add(comboBoxNomIngredient);
 		
 		textIdIngredient = new JTextField();
-		textIdIngredient.setBounds(131, 124, 180, 19);
+		textIdIngredient.setBounds(131, 124, 180, 26);
 		frame.getContentPane().add(textIdIngredient);
 		textIdIngredient.setColumns(10);
 		
@@ -79,7 +79,7 @@ public class InterfaceSupprimerIngredient {
 		
 		textQuantite = new JTextField();
 		textQuantite.setColumns(10);
-		textQuantite.setBounds(131, 178, 180, 19);
+		textQuantite.setBounds(131, 178, 180, 26);
 		frame.getContentPane().add(textQuantite);
 		
 		JLabel lblNomIngredient = new JLabel("Ingredient");
@@ -144,7 +144,7 @@ public class InterfaceSupprimerIngredient {
 		});
 		btnSupprimer.setFont(new Font("Rockwell", Font.PLAIN, 14));
 		btnSupprimer.setEnabled(false);
-		btnSupprimer.setBounds(156, 249, 122, 33);
+		btnSupprimer.setBounds(162, 250, 122, 33);
 		frame.getContentPane().add(btnSupprimer);
 		
 		JButton btnNewButton = new JButton("Retour");

@@ -19,6 +19,9 @@ import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
+
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
@@ -42,6 +45,7 @@ public class InterfaceAjoutCuisinier {
 			public void run() {
 				try {
 					InterfaceAjoutCuisinier window = new InterfaceAjoutCuisinier();
+					UIManager.setLookAndFeel(new NimbusLookAndFeel());
 					window.frame.setVisible(true);									
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -75,7 +79,7 @@ public class InterfaceAjoutCuisinier {
 		frame.getContentPane().add(lblNom);
 		
 		textNom = new JTextField();
-		textNom.setBounds(160, 63, 138, 19);
+		textNom.setBounds(158, 57, 138, 26);
 		frame.getContentPane().add(textNom);
 		textNom.setColumns(10);
 		
@@ -86,7 +90,7 @@ public class InterfaceAjoutCuisinier {
 		
 		textPrenom = new JTextField();
 		textPrenom.setColumns(10);
-		textPrenom.setBounds(160, 121, 138, 19);
+		textPrenom.setBounds(160, 121, 138, 26);
 		frame.getContentPane().add(textPrenom);
 		
 		JLabel lblTelephone = new JLabel("Telephone");
@@ -106,7 +110,7 @@ public class InterfaceAjoutCuisinier {
 			}
 		});
 		textTelephone.setColumns(10);
-		textTelephone.setBounds(160, 187, 138, 19);
+		textTelephone.setBounds(160, 187, 138, 26);
 		frame.getContentPane().add(textTelephone);
 		boolean coReussi = false;
 		try {
