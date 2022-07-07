@@ -22,6 +22,7 @@ import javax.swing.JTextField;
 import java.util.Calendar;
 import java.util.Date;
 import java.awt.Color;
+import javax.swing.JMenuBar;
 
 
 public class InterfaceAjouterCommande {
@@ -78,6 +79,7 @@ public class InterfaceAjouterCommande {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(246, 201, 84));
 		frame.setBounds(100, 100, 966, 633);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -139,7 +141,7 @@ public class InterfaceAjouterCommande {
 		
 		JLabel lblHeureLivraison = new JLabel("Heure de livraison souhait\u00E9");
 		lblHeureLivraison.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblHeureLivraison.setBounds(685, 364, 197, 13);
+		lblHeureLivraison.setBounds(705, 364, 197, 13);
 		frame.getContentPane().add(lblHeureLivraison);
 		
 		/* Variable de debug pour v�rifier si la connexion a bien �t� �tabli */
@@ -199,18 +201,6 @@ public class InterfaceAjouterCommande {
 		
 			
 		}
-		
-		JButton btnNewButton = new JButton("Retour");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				//InterfaceGestionnaire interfaceGestionnaire = new InterfaceGestionnaire();
-				//interfaceGestionnaire.frame.setVisible(true);
-				frame.dispose();
-			}
-		});
-		btnNewButton.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnNewButton.setBounds(10, 13, 126, 21);
-		frame.getContentPane().add(btnNewButton);
 		
 		JButton btnAfficher = new JButton("Afficher");
 		btnAfficher.addActionListener(new ActionListener() {
@@ -289,7 +279,7 @@ public class InterfaceAjouterCommande {
 			}
 		});
 		btnAjouterCommande.setFont(new Font("Rockwell", Font.PLAIN, 14));
-		btnAjouterCommande.setBounds(685, 420, 197, 63);
+		btnAjouterCommande.setBounds(705, 418, 197, 63);
 		frame.getContentPane().add(btnAjouterCommande);
 		
 		
@@ -397,62 +387,63 @@ public class InterfaceAjouterCommande {
 		
 		textHeureLivraison = new JTextField();
 		textHeureLivraison.setColumns(10);
-		textHeureLivraison.setBounds(685, 391, 200, 19);
+		textHeureLivraison.setBounds(705, 388, 200, 19);
 		frame.getContentPane().add(textHeureLivraison);
-		
-		JButton btnAjouterClient = new JButton("Ajouter");
-		btnAjouterClient.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				InterfaceAjoutClient interfaceAjoutClient = new InterfaceAjoutClient();
-				interfaceAjoutClient.frame.setVisible(true);
-				
-					
-			}
-		});
-		btnAjouterClient.setForeground(Color.BLACK);
-		btnAjouterClient.setFont(new Font("Malgun Gothic", Font.PLAIN, 14));
-		btnAjouterClient.setBounds(198, 276, 102, 33);
-		frame.getContentPane().add(btnAjouterClient);
 		
 		textCodePostale = new JTextField();
 		textCodePostale.setColumns(10);
-		textCodePostale.setBounds(61, 466, 180, 19);
+		textCodePostale.setBounds(155, 465, 180, 19);
 		frame.getContentPane().add(textCodePostale);
 		
 		JLabel lblCodePostale = new JLabel("Code Postale");
 		lblCodePostale.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblCodePostale.setBounds(61, 441, 102, 13);
+		lblCodePostale.setBounds(155, 441, 102, 13);
 		frame.getContentPane().add(lblCodePostale);
 		
 		textVille = new JTextField();
 		textVille.setColumns(10);
-		textVille.setBounds(61, 412, 180, 19);
+		textVille.setBounds(155, 407, 180, 19);
 		frame.getContentPane().add(textVille);
 		
 		JLabel lblVille = new JLabel("Ville");
 		lblVille.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblVille.setBounds(61, 389, 77, 13);
+		lblVille.setBounds(155, 393, 77, 13);
 		frame.getContentPane().add(lblVille);
 		
 		textLibAdresse = new JTextField();
 		textLibAdresse.setColumns(10);
-		textLibAdresse.setBounds(61, 360, 180, 19);
+		textLibAdresse.setBounds(155, 362, 180, 19);
 		frame.getContentPane().add(textLibAdresse);
 		
 		JLabel lblAdresse = new JLabel("Adresse");
 		lblAdresse.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblAdresse.setBounds(61, 337, 171, 13);
+		lblAdresse.setBounds(155, 338, 171, 13);
 		frame.getContentPane().add(lblAdresse);
 		
 		textComplementAdresse = new JTextField();
 		textComplementAdresse.setColumns(10);
-		textComplementAdresse.setBounds(61, 520, 180, 19);
+		textComplementAdresse.setBounds(155, 519, 180, 19);
 		frame.getContentPane().add(textComplementAdresse);
 		
 		JLabel lblComplementAdresse = new JLabel("Compl\u00E9ment d'adresse");
 		lblComplementAdresse.setFont(new Font("Microsoft YaHei", Font.PLAIN, 14));
-		lblComplementAdresse.setBounds(61, 495, 196, 13);
+		lblComplementAdresse.setBounds(155, 495, 196, 13);
 		frame.getContentPane().add(lblComplementAdresse);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(0, 0, 71, 22);
+		frame.getContentPane().add(menuBar);
+		
+		JButton btnNewButton = new JButton("Retour");
+		menuBar.add(btnNewButton);
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				//InterfaceGestionnaire interfaceGestionnaire = new InterfaceGestionnaire();
+				//interfaceGestionnaire.frame.setVisible(true);
+				frame.dispose();
+			}
+		});
+		btnNewButton.setFont(new Font("Rockwell", Font.PLAIN, 14));
 		
 
 	}
