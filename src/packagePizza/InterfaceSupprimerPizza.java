@@ -1,5 +1,6 @@
 package packagePizza;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.sql.*;
 import javax.swing.JFrame;
@@ -21,7 +22,7 @@ public class InterfaceSupprimerPizza {
 	private JTextField textPrixPizza;
 	private JTextField textNomPizza;
 	
-	// Ajouté pour la connexion
+	// Ajoutï¿½ pour la connexion
 	private static Connection connection = null;
 	private static Scanner scanner = new Scanner(System.in);
 
@@ -54,6 +55,7 @@ public class InterfaceSupprimerPizza {
 	 */
 	private void initialize() {
 		frame = new JFrame();
+		frame.getContentPane().setBackground(new Color(246, 201, 84));
 		frame.setBounds(100, 100, 450, 381);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -101,7 +103,7 @@ public class InterfaceSupprimerPizza {
 		lblNomPizza.setBounds(131, 79, 102, 13);
 		frame.getContentPane().add(lblNomPizza);
 		
-		/* Variable de debug pour vérifier si la connexion a bien été établi */
+		/* Variable de debug pour vï¿½rifier si la connexion a bien ï¿½tï¿½ ï¿½tabli */
 		boolean coReussi = false;
 		
 		// Connexion
@@ -134,7 +136,7 @@ public class InterfaceSupprimerPizza {
 		
 		}
 		catch (Exception e) {
-			throw new RuntimeException("Erreur détecté");
+			throw new RuntimeException("Erreur dï¿½tectï¿½");
 		
 			
 		}
@@ -215,7 +217,7 @@ public class InterfaceSupprimerPizza {
 			System.out.println("telClient: " +telClient); 
 			*/
 			
-		} else System.out.println("Pas de données trouvés...");
+		} else System.out.println("Pas de donnï¿½es trouvï¿½s...");
 		
 	}
 	
@@ -226,7 +228,7 @@ public class InterfaceSupprimerPizza {
 		
 		pstmt.setString(1, idPizza);
 		pstmt.executeUpdate();
-		System.out.println("Suppression effectué");
+		System.out.println("Suppression effectuï¿½");
 	}
 	
 	public void refresh (JComboBox comboBox) throws SQLException{

@@ -430,12 +430,9 @@ public class InterfaceAjouterCommande {
 		lblComplementAdresse.setBounds(155, 495, 196, 13);
 		frame.getContentPane().add(lblComplementAdresse);
 		
-		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(0, 0, 71, 22);
-		frame.getContentPane().add(menuBar);
-		
 		JButton btnNewButton = new JButton("Retour");
-		menuBar.add(btnNewButton);
+		btnNewButton.setBounds(0, 0, 75, 20);
+		frame.getContentPane().add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//InterfaceGestionnaire interfaceGestionnaire = new InterfaceGestionnaire();
