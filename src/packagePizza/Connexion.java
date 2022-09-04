@@ -72,7 +72,7 @@ public class Connexion extends JFrame {
 					Class.forName("com.mysql.cj.jdbc.Driver");
 					
 					
-					connection = DriverManager.getConnection("jdbc:mysql://localhost:8889/bdd_huissier","root","root");
+					connection = DriverManager.getConnection("jdbc:mysql://localhost:8889/pizzeria","root","root");
 					coReussi = true;
 					
 					String users = textField.getText();
