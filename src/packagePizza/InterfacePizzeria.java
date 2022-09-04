@@ -120,7 +120,7 @@ public class InterfacePizzeria {
 			}
 		});
 		btnGestionnaire.setFont(new Font("Dialog", Font.BOLD, 17));
-		btnGestionnaire.setBounds(153, 61, 145, 40);
+		btnGestionnaire.setBounds(153, 62, 145, 40);
 		frame.getContentPane().add(btnGestionnaire);
 		
 		passwordField = new JPasswordField();
@@ -133,4 +133,5 @@ public class InterfacePizzeria {
 		
 
 	}
+
 }

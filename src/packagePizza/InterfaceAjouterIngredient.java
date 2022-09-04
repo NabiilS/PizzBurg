@@ -108,13 +108,9 @@ public class InterfaceAjouterIngredient {
 		boolean coReussi = false;
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
+	
 		
-		
-		String dbURL = "jdbc:mysql://localhost:3306/pizzeria"; /* Commande pour savoir le port mysql: show global variables like 'PORT'; */
-		String dbUsername = "root";
-		String password = "";
-		
-		connection = DriverManager.getConnection(dbURL, dbUsername, password);
+		connection = DriverManager.getConnection("jdbc:mysql://localhost:8889/pizzeria","root","root");
 		coReussi = true;		
 		}
 		catch (Exception e) {
